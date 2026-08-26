@@ -41,7 +41,13 @@
         "createdAt": "Hace 1 día",
         "content": "Manejando el ecosistema interactivo con JavaScript y React para crear interfaces modulares, eficientes y estilizadas. ¿El siguiente paso lógico? Mientras lees esto, ya estoy explorando el lado del servidor y las bases de datos para dominar el ciclo completo del desarrollo.",
         "media": [
-            {"id": "m-1", "name": "JavaScript", "icon": "/LogoJs.png"}
+            {"id": "m-1", "name": "JavaScript", "icon": "/LogoJs.png"},
+            {"id": "m-2", "name": "React", "icon": "/LogoReact.png"},
+            {"id": "m-3", "name": "Tailwind", "icon": "/LogoTailwind.png"},
+            {"id": "m-4", "name": "Css", "icon": "/LogoCss.png"},
+            {"id": "m-5", "name": "HTML", "icon": "/LogoHtml.png"},
+            {"id": "m-6", "name": "Interrogante", "icon": "/LogoInterrogante.png"}
+
         ],
         "metrics":{
             "comments":[],
@@ -57,7 +63,7 @@
             "handle": "@YulianSoracá",
             "avatar": "/FotoLuffy.png"
     },
-        "createdAt": "Hace 2 día",
+        "createdAt": "Hace 2 días",
         "content": "Mi portafolio es mi mejor carta de presentación. Proyectos construidos desde cero siendo producto del autoaprendizaje riguroso, diseñados no solo para funcionar, sino para escalar en complejidad lógica y estructura con cada nueva línea de código.",
         "media": [],
         "metrics":{
