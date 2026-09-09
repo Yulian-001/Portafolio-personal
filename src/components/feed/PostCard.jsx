@@ -1,0 +1,35 @@
+
+
+export default function  PostCard ({ post }) {
+    return (
+        <article className='post-card'>
+            <header>
+                <img src={post.author.avatar} alt={ post.author.name }/>
+                <div className="container-information">
+                    <h3>{ post.author.name }</h3>
+                    <span>{ post.author.handle }</span>
+                </div>
+                <time dateTime= { post.createdAt }> { post.createdAt }</time>
+            </header>
+
+            <section>
+                <p>{ post.content}</p>
+                {post.media && post.media.length > 0 && (
+                    <ul>
+                        {post.media.map((item)=>(
+                            <li key={item.id}>
+                                <img src={item.icon} alt={item.name} />
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </section>
+            
+            <footer>
+                
+            </footer>
+        </article>
+    )
+}
+
+
