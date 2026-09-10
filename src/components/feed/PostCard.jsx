@@ -23,6 +23,25 @@ export default function  PostCard ({ post }) {
                         ))}
                     </ul>
                 )}
+                    {post.projects && post.projects.length > 0 &&(
+                    <ul>
+                        {post.projects.map((item)=> (
+                            <li key={item.id}>
+                                <ol>
+                                    <h4>{item.name}</h4> 
+                                    <p>{item.description}</p> 
+                                    <a href={item.githubUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="github-link"
+                                    >
+                                        Ver Github 
+                                    </a>   
+                                </ol>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </section>
             
             <footer>
