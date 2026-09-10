@@ -1,6 +1,8 @@
-
+import PostFooder from "./PostFooter"
 
 export default function  PostCard ({ post }) {
+    if(!post) return null;
+
     return (
         <article className='post-card'>
             <header>
@@ -44,9 +46,7 @@ export default function  PostCard ({ post }) {
                 )}
             </section>
             
-            <footer>
-                
-            </footer>
+            <PostFooder metrics={post.metrics}/>
         </article>
     )
 }
