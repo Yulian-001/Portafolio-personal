@@ -2,68 +2,102 @@
     {
         "id": "post-1",
         "author": {
-            "name": "Yulian Andrés Soracá",
+            "name": "Yulian {~_~}",
             "handle": "@YulianSoracá",
             "avatar": "/FotoLuffy.png"
     },
         "createdAt": "Hace 2 horas",
         "content": "Bienvenido a mi entorno de desarrollo este es el reflejo de mi día a día como desarrollador: un puente directo entre el diseño de experiencias y la arquitectura del código. Te invito a explorar los proyectos donde materializo ideas, transforma problemas  en componentes interactivos, modulares y listos para producción",
         "media": [],
+        "projects":[],
         "metrics":{
-            "comments":[],
-            "reposts":[],
-            "likes":12
+            "comments":0,
+            "reposts":0,
+            "likes":12,
+            "save": 0,
+            "share":0
         }
     },
     {
         "id": "post-2",
         "author": {
-            "name": "Yulian Andrés Soracá",
+            "name": "Yulian {~_~}",
             "handle": "@YulianSoracá",
             "avatar": "/FotoLuffy.png"
     },
         "createdAt": "Hace 1 día",
         "content": "Evolucionando constantemente de forma independiente. Persigo la excelencia técnica para estructurar arquitecturas de software complejas. Aspiro a diseñar sistemas robustos y eficientes en entornos corporativos. Busco sumarme a un equipo donde pueda diseñar bases sólidas, potenciar el trabajo colaborativo y aportar soluciones listas para escalar desde el primer día.",
         "media": [],
+        "projects":[],
         "metrics":{
-            "comments":[],
-            "reposts":[],
+            "comments":0,
+            "reposts":0,
             "likes":8
         }
     },
         {
         "id": "post-3",
         "author": {
-            "name": "Yulian Andrés Soracá",
+            "name": "Yulian {~_~}",
             "handle": "@YulianSoracá",
             "avatar": "/FotoLuffy.png"
     },
         "createdAt": "Hace 1 día",
         "content": "Manejando el ecosistema interactivo con JavaScript y React para crear interfaces modulares, eficientes y estilizadas. ¿El siguiente paso lógico? Mientras lees esto, ya estoy explorando el lado del servidor y las bases de datos para dominar el ciclo completo del desarrollo.",
         "media": [
-            {"id": "m-1", "name": "JavaScript", "icon": "/LogoJs.png"}
+            {"id": "m-1", "name": "JavaScript", "icon": "/LogoJs.png"},
+            {"id": "m-2", "name": "React", "icon": "/LogoReact.png"},
+            {"id": "m-3", "name": "Tailwind", "icon": "/LogoTailwind.png"},
+            {"id": "m-4", "name": "Css", "icon": "/LogoCss.png"},
+            {"id": "m-5", "name": "Html", "icon": "/LogoHtml.png"},
+            {"id": "m-6", "name": "PostgreSQL", "icon": "/LogoPostgres.png"},
+            {"id": "m-7", "name": "Github", "icon": "/LogoGithub.png"},
+            {"id": "m-8", "name": "MySQL", "icon": "/LogoMysql.png"},
+            {"id": "m-9", "name": "Próximo", "icon": "/LogoInterrogante.png"}
+
         ],
         "metrics":{
-            "comments":[],
-            "reposts":[],
-            "likes":12
+            "comments":0,
+            "reposts":0,
+            "likes":12,
+            "save": 0,
+            "share":0
         }
     },
     
     {
         "id": "post-4",
         "author": {
-            "name": "Yulian Andrés Soracá",
+            "name": "Yulian {~_~}",
             "handle": "@YulianSoracá",
             "avatar": "/FotoLuffy.png"
     },
-        "createdAt": "Hace 2 día",
+        "createdAt": "Hace 2 días",
         "content": "Mi portafolio es mi mejor carta de presentación. Proyectos construidos desde cero siendo producto del autoaprendizaje riguroso, diseñados no solo para funcionar, sino para escalar en complejidad lógica y estructura con cada nueva línea de código.",
         "media": [],
+        "projects":[
+            {"id": "p-1", 
+            "name": "Sistema de Gestión General de Gym",
+            "description": " Plataforma web para membresías y agendas en tiempo real. Estructurada con arquitectura modular y optimización de datos para un flujo administrativo rápido y sin fricciones.",
+            "githubUrl":"https://github.com/Yulian-001/gym-management-system.git"
+        },
+            {"id": "p-2", 
+            "name": "Hitos de Autos Deportivos",
+            "description": "Página web interactiva que expone los mejores super autos deportivos desde sus clásicos hasta los más recientes en el mundo automovilistico deportivo.",
+            "githubUrl":"https://github.com/Yulian-001/Hitos-de-autos-deportivos-e-hiperdeportivos.git"
+        },
+            {"id": "p-3", 
+            "name": "Calculadora de CDT",
+            "description": "Esta es una página web que funciona como calculadora de CDT para saber cuanta ganancia tendrá al ubicar mi dinero bajo una actividad bancaria que nos ofrecen.",
+            "githubUrl":"https://github.com/Yulian-001/Calcule-CDT.git"
+        }
+        ],
         "metrics":{
-            "comments":[],
-            "reposts":[],
-            "likes":12
+            "comments":0,
+            "reposts":0,
+            "likes":12,
+            "save": 0,
+            "share":0
         }
     }
 ]
