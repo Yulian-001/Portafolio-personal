@@ -1,12 +1,17 @@
-import PostFooder from "./PostFooter"
+import PostFooter from "./PostFooter"
+
 
 export default function  PostCard ({ post }) {
     if(!post) return null;
 
     return (
         <article className='post-card'>
-            <header>
-                <img src={post.author.avatar} alt={ post.author.name }/>
+            <header className="flex flex-line gap-3">
+                <img 
+                src={post.author.avatar} 
+                alt={ post.author.name }
+                className="size-10 rounded-3xl "
+                />
                 <div className="container-information">
                     <h3>{ post.author.name }</h3>
                     <span>{ post.author.handle }</span>
@@ -17,10 +22,13 @@ export default function  PostCard ({ post }) {
             <section>
                 <p>{ post.content}</p>
                 {post.media && post.media.length > 0 && (
-                    <ul>
+                    <ul className="flex flex-wrap gap-3 my3 p-0 list-none">
                         {post.media.map((item)=>(
                             <li key={item.id}>
-                                <img src={item.icon} alt={item.name} />
+                                <img 
+                                src={item.icon}
+                                alt={item.name}
+                                className="size-30"/>
                             </li>
                         ))}
                     </ul>
@@ -46,7 +54,7 @@ export default function  PostCard ({ post }) {
                 )}
             </section>
             
-            <PostFooder metrics={post.metrics}/>
+            <PostFooter metrics={post.metrics}/>
         </article>
     )
 }
