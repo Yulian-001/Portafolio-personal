@@ -4,7 +4,7 @@ import PostCard from './components/feed/PostCard'
 
 export default function App() {
   return (
-    <main className='app-container'>
+    <main className=" bg-[var(--color-fondo)]">
       <section className='feed-container'>
 
         {posts.map((item)=>(

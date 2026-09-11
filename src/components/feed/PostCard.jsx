@@ -5,8 +5,9 @@ export default function  PostCard ({ post }) {
     if(!post) return null;
 
     return (
-        <article className="flex flex-col w-full max-w-4xl mx-auto p-4 sm:p-6 my-4 bg-[var(--color-tarjet)] border border-white/10 rounded-2xl shadow-2xl text-white transition-all duration-300">  
-        <header className="flex items-center gap-3 pb-4 " >
+        <article className="flex flex-col w-full max-w-2xl mx-auto p-4 sm:p-6 my-4 bg-[var(--color-tarjet)] border border-white/50  rounded-2xl shadow-2xl text-white  transition-all duration-300">  
+            
+            <header className="flex items-center gap-3 pb-4 " >
                 <img 
                 src={post.author.avatar} 
                 alt={ post.author.name }
@@ -28,20 +29,21 @@ export default function  PostCard ({ post }) {
                                 <img 
                                 src={item.icon}
                                 alt={item.name}
-                                className="w-32 h-32 object-contain transition-transform duration-300 ease-in-out hover:scale-125 cursor-pointer"
+                                className="w-32 h-32  rounded-4xl object-contain transition-transform duration-300 ease-in-out hover:scale-115 cursor-pointer"
                             />
                             </li>
                         ))}
                     </ul>
                 )}
                     {post.projects && post.projects.length > 0 &&(
-                    <ul >
+                    <ul className="space-y-3 pt-2" >
                         {post.projects.map((item)=> (
-                            <li key={item.id}>
+                            <li key={item.id} className="p-3">
                                 <ol>
-                                    <h4  >{item.name}</h4> 
-                                    <p >{item.description}</p> 
-                                    <a href={item.githubUrl}
+                                    <h4 className="pb-3 text-xl font-medium" >{item.name}</h4> 
+                                    <p className="mb-3">{item.description}</p> 
+                                    <a className="mx-3 font-mono text-xl text-blue-600 hover:text-purple-300 underline" 
+                                    href={item.githubUrl}
                                     target="_blank"
                                     rel="noreferrer"
                                     >

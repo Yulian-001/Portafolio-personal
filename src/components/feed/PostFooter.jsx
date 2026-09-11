@@ -10,21 +10,21 @@ return (
         <div className="flex items-center gap-6">
 
             <button className="flex items-center gap-2 transition-colors hover:text-purple-300 group" aria-label="Comentarios">
-                <RiMessage2Line size={20}/>
+                <RiMessage2Line size={30}/>
                 <span className="text-xs font-medium">
                     {metrics?.comments || 0}
                 </span>                
             </button>
 
             <button className="flex items-center gap-2 transition-colors hover:text-green-400 group" aria-label="Reposts">
-                <BiRepost size={20}/>
+                <BiRepost size={30}/>
                 <span className="text-xs font-medium">
                     {metrics?.reposts|| 0}
                 </span>                
             </button>
 
             <button className="flex items-center gap-2 transition-colors hover:text-pink-500 group" aria-label="Me gusta">
-                <FcLike size={20}/>
+                <FcLike size={30}/>
                 <span className="text-xs font-medium">
                     {metrics?.likes || 0}
                 </span>                
@@ -33,11 +33,11 @@ return (
         </div>
         <div className="flex items-center gap-4">
             <button className="transition-colors hover:text-purple-300 hover:scale-110 duration-200" aria-label="Guardar">
-                <HiSave size={20}/>              
+                <HiSave size={30}/>              
             </button>
 
             <button className="transition-colors hover:text-purple-300 hover:scale-110 duration-200" aria-label="Compartir">
-                <FiShare2 size={20}/>              
+                <FiShare2 size={30}/>              
             </button>
         </div>
     </footer>
