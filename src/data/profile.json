@@ -1,0 +1,76 @@
+[
+    {
+        "id": "profile-1",
+        "name": "Yulian Andrés Soracá Castañeda",
+        "description": "Desarrollador Frontend y Explorador Tecnológico. Programador de código limpio. Construyendo UIs dinamicas con React/Vue 🌐  Próxima camino: Backends Robustos. 💻 Estudiante de Análisis y Desarrollo de Software | Futuro Ingeniero de Software 🎓",
+        "location": "De Colombia",
+        "gmail": "soracayulian@gmail.com",
+        "phone": " +57 3144533840",
+        "studies": {
+            "technologist": "/logoSena.png",
+            "bootcam": "/logoTalentoTech.png"
+        },
+        "terminalLogs": [
+            {
+                "id": "log-1",
+                "type": "PROBLEMA",
+                "title": "FUGA DE MEMORIA POR SUSCRIPCIONES WEBSOCKET NO FINALIZADAS AL DESMONTAR COMPONENTES",
+                "timestamps": "Time: 14:02:11.04"
+            },
+            {
+                "id": "log-2",
+                "type": "SOLUCIÓN",
+                "title": "IMPLEMENTACIÓN DE VIRTUALIZACIÓN DE TABLAS (WINDOWING) PARA RENDERIZAR 10,000+ FILAS SIN SATURAR EL DOM",
+                "timestamps": "Time: 14:02:21.15"
+            },
+            {
+                "id": "log-3",
+                "type": "PROBLEMA",
+                "title": "CONDICIÓN DE CARRERA (RACE CONDITION) EN PETICIONES HTTP ASÍNCRONAS DENTRO DEL BUSCADOR EN TIEMPO REAL",
+                "timestamps": "Time: 14:02:31.28"
+            },
+            {
+                "id": "log-4",
+                "type": "SOLUCIÓN",
+                "title": "DESACOPLAMIENTO DE PETICIONES OBSOLETAS MEDIANTE ABORTCONTROLLER Y PATRÓN DEBOUNCE A NIVEL DE HOOK",
+                "timestamps": "Time: 14:02:41.40"
+            },
+            {
+                "id": "log-5",
+                "type": "OPTIMIZACIÓN",
+                "title": "REFACTORIZACIÓN DE ESTADO GLOBAL EN REACT CONTEXT DIVIDIENDO PROVIDERS PARA EVITAR CASCADAS DE RE-RENDERS",
+                "timestamps": "Time: 14:02:51.52"
+            },
+            {
+                "id": "log-6",
+                "type": "SEGURIDAD",
+                "title": "MANEJO DE INTERCEPTORES HTTP PARA RENOVACIÓN SILENCIOSA DE REFRESH TOKENS JWT ANTE ERRORES 401 UN-AUTHORIZED",
+                "timestamps": "Time: 14:03:01.65"
+            },
+            {
+                "id": "log-7",
+                "type": "ARQUITECTURA",
+                "title": "ESTRATEGIA DE CACHÉ EN CLIENTE CON STALE-WHILE-REVALIDATE PARA REDUCIR PETICIONES REDUNDANTES A LA API",
+                "timestamps": "Time: 14:03:11.79"
+            },
+            {
+                "id": "log-8",
+                "type": "SOLUCIÓN",
+                "title": "SINCRONIZACIÓN DE ESTADO MULTI-PESTAÑA EN TIEMPO REAL MEDIANTE BROADCAST CHANNEL API E INDEXEDDB",
+                "timestamps": "Time: 14:03:21.91"
+            },
+            {
+                "id": "log-9",
+                "type": "PROBLEMA",
+                "title": "DESVIACIÓN DE MAQUETADO (CLS) PROVOCADO POR LA CARGA ASÍNCRONA DE FUENTES PERSONALIZADAS Y ASSETS",
+                "timestamps": "Time: 14:03:32.05"
+            },
+            {
+                "id": "log-10",
+                "type": "OPTIMIZACIÓN",
+                "title": "DIVISIÓN DE CÓDIGO (CODE SPLITTING) Y DYNAMIC IMPORTS REDUCIENDO EL TAMAÑO DEL BUNDLE INICIAL EN UN 40%",
+                "timestamps": "Time: 14:03:42.18"
+            }
+        ]
+    }
+]
