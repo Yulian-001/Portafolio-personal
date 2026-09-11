@@ -1,4 +1,4 @@
-import PostFooter from "./PostFooter"
+import PostIcons from "./PostIcons"
 
 
 export default function  PostCard ({ post }) {
@@ -56,7 +56,7 @@ export default function  PostCard ({ post }) {
                 )}
             </section>
             
-            <PostFooter metrics={post.metrics}/>
+            <PostIcons metrics={post.metrics}/>
         </article>
     )
 }
