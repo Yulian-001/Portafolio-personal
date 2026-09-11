@@ -5,45 +5,45 @@ export default function  PostCard ({ post }) {
     if(!post) return null;
 
     return (
-        <article className='post-card'>
-            <header className="flex flex-line gap-3">
+        <article className="flex flex-col w-full max-w-4xl mx-auto p-4 sm:p-6 my-4 bg-[var(--color-tarjet)] border border-white/10 rounded-2xl shadow-2xl text-white transition-all duration-300">  
+        <header className="flex items-center gap-3 pb-4 " >
                 <img 
                 src={post.author.avatar} 
                 alt={ post.author.name }
-                className="size-10 rounded-3xl "
+                className="size-14 rounded-full object-cover ring-2 ring-purple-600/70"
                 />
-                <div className="container-information">
-                    <h3>{ post.author.name }</h3>
-                    <span>{ post.author.handle }</span>
+                <div className="flex flex-col">
+                    <h3 className="font-bold text-sm sm:text-base text-purple-100">{ post.author.name }</h3>
+                    <span className="text-xs text-purple-300/70">{ post.author.handle }</span>
                 </div>
-                <time dateTime= { post.createdAt }> { post.createdAt }</time>
+                <time className="ml-auto text-sm text-purple-200/70" dateTime= { post.createdAt }> { post.createdAt }</time>
             </header>
 
-            <section>
-                <p>{ post.content}</p>
+            <section className="-my-6 ml-14">
+                <p className="text-xl sm:text-base text-gray-200 leading-tight" >{ post.content}</p>
                 {post.media && post.media.length > 0 && (
-                    <ul className="flex flex-wrap gap-3 my3 p-0 list-none">
+                    <ul className="flex flex-wrap gap-3 pt-2 list-none p-0">
                         {post.media.map((item)=>(
                             <li key={item.id}>
                                 <img 
                                 src={item.icon}
                                 alt={item.name}
-                                className="size-30"/>
+                                className="w-32 h-32 object-contain transition-transform duration-300 ease-in-out hover:scale-125 cursor-pointer"
+                            />
                             </li>
                         ))}
                     </ul>
                 )}
                     {post.projects && post.projects.length > 0 &&(
-                    <ul>
+                    <ul >
                         {post.projects.map((item)=> (
                             <li key={item.id}>
                                 <ol>
-                                    <h4>{item.name}</h4> 
-                                    <p>{item.description}</p> 
+                                    <h4  >{item.name}</h4> 
+                                    <p >{item.description}</p> 
                                     <a href={item.githubUrl}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="github-link"
                                     >
                                         Ver Github 
                                     </a>   

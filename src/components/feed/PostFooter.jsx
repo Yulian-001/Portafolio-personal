@@ -6,35 +6,37 @@ import { FiShare2 } from "react-icons/fi";
 
 export default function PostFooder({metrics}){
 return (
-    <footer className="post-footer">
-        <div className="actions-left">
+    <footer className="flex items-center justify-between pt-10 mt-2 text-purple-300/70">
+        <div className="flex items-center gap-6">
 
-            <button className="action-btn" aria-label="Comentarios">
+            <button className="flex items-center gap-2 transition-colors hover:text-purple-300 group" aria-label="Comentarios">
                 <RiMessage2Line size={20}/>
-                <span>
+                <span className="text-xs font-medium">
                     {metrics?.comments || 0}
                 </span>                
             </button>
 
-            <button className="action-btn" aria-label="Reposts">
+            <button className="flex items-center gap-2 transition-colors hover:text-green-400 group" aria-label="Reposts">
                 <BiRepost size={20}/>
-                <span>
+                <span className="text-xs font-medium">
                     {metrics?.reposts|| 0}
                 </span>                
             </button>
 
-            <button className="action-btn" aria-label="Me gusta">
+            <button className="flex items-center gap-2 transition-colors hover:text-pink-500 group" aria-label="Me gusta">
                 <FcLike size={20}/>
-                <span>
+                <span className="text-xs font-medium">
                     {metrics?.likes || 0}
                 </span>                
             </button>
 
-            <button className="action-btn" aria-label="Guardar">
+        </div>
+        <div className="flex items-center gap-4">
+            <button className="transition-colors hover:text-purple-300 hover:scale-110 duration-200" aria-label="Guardar">
                 <HiSave size={20}/>              
             </button>
 
-            <button className="action-btn" aria-label="Compartir">
+            <button className="transition-colors hover:text-purple-300 hover:scale-110 duration-200" aria-label="Compartir">
                 <FiShare2 size={20}/>              
             </button>
         </div>

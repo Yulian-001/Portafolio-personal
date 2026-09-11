@@ -2,8 +2,7 @@
     {
         "id": "post-1",
         "author": {
-            "name": "Yulian {~_~}",
-            "handle": "@YulianSoracá",
+            "name": "Yulian {~_~}",            
             "avatar": "/FotoLuffy.png"
     },
         "createdAt": "Hace 2 horas",
@@ -21,8 +20,7 @@
     {
         "id": "post-2",
         "author": {
-            "name": "Yulian {~_~}",
-            "handle": "@YulianSoracá",
+            "name": "Yulian {~_~}",            
             "avatar": "/FotoLuffy.png"
     },
         "createdAt": "Hace 1 día",
@@ -38,8 +36,7 @@
         {
         "id": "post-3",
         "author": {
-            "name": "Yulian {~_~}",
-            "handle": "@YulianSoracá",
+            "name": "Yulian {~_~}",            
             "avatar": "/FotoLuffy.png"
     },
         "createdAt": "Hace 1 día",
@@ -68,8 +65,7 @@
     {
         "id": "post-4",
         "author": {
-            "name": "Yulian {~_~}",
-            "handle": "@YulianSoracá",
+            "name": "Yulian {~_~}",            
             "avatar": "/FotoLuffy.png"
     },
         "createdAt": "Hace 2 días",
