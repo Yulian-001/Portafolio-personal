@@ -5,8 +5,9 @@ import profile from './data/profile.json'
 
 export default function App() {
   return (
-    <main className=" bg-[var(--color-fondo)]">
-      <section>
+    <main className="  bg-[var(--color-fondo)]">
+      <div className=' flex gap-6 mx-12'>
+      <section >
 
         {posts.map((item)=>(
           <PostCard key={item.id} post={item} />
@@ -19,7 +20,7 @@ export default function App() {
         <Profile key={item.id} prof={item} />
       ))}
       </section>
-      
+      </div>
     </main>
   )
 }

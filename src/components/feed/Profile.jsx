@@ -4,15 +4,17 @@ export default function Profile( {prof} ){
     if(!prof) return null;
     
     return(
-        <article className="flex w-full max-w-4xl mx-auto p-4 sm:p-6 my-4 bg-[var(--color-tarjet)] border border-white/50 rounded-2xl shadow-2xl text-white transition-all duration-300">
-            <header>
+        <article className=" w-full max-w-4xl mx-auto p-4 sm:p-6 my-4 bg-[var(--color-tarjet)] border border-white/80 rounded-2xl    text-white transition-all duration-300">
+            <header className="  justify-between">
                 <img 
                 src={prof.avatar}
                 alt="Logo sena"
                 className="size-20 purple-600/70 p-1 rounded-full ring-2 ring-white"
                 />
-                <h3 className=" text-xl text-white/90 bg-mist-700/60 px-3 py-0.5 rounded-2xl border-2 ">Seguir</h3>
-                <ProfileIcons/>
+                <h3 className="text-xl text-white/90 bg-mist-700/60  rounded-2xl border-2 ">Seguir</h3>
+                <div>
+                    <ProfileIcons/>
+                </div>
             </header>
 
             <section>
@@ -23,7 +25,7 @@ export default function Profile( {prof} ){
                 <h4>{prof.gmail} </h4>
                 <h4>{prof.phone} </h4>
                 </div>
-                <div className="flex flex-line gap-4 justify-start align-center">
+                <div className="flex flex-line gap-4 justify-start">
                     <h4>Estudios</h4>
                     <img src={prof.studies.technologist}
                     alt="Logo Sena" 
@@ -37,6 +39,12 @@ export default function Profile( {prof} ){
             </section>
 
             <footer>
+                <div>
+                    <div></div>
+                    <div>
+                        
+                    </div>
+                </div>
 
             </footer>
         </article>
