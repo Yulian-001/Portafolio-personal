@@ -4,7 +4,7 @@ export default function Profile( {prof} ){
     if(!prof) return null;
     
     return(
-        <article className=" w-full max-w-4xl mx-auto p-4 sm:p-6 my-4 bg-[var(--color-tarjet)] border border-white/80 rounded-2xl    text-white transition-all duration-300">
+        <article className=" w-full max-w-4xl mx-auto p-4 sm:p-6 my-2 bg-[var(--color-tarjet)] border border-white/80 rounded-2xl     text-white transition-all duration-300">
             <header className="  justify-between">
                 <img 
                 src={prof.avatar}
