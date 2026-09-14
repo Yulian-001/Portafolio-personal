@@ -5,7 +5,7 @@ export default function  PostCard ({ post }) {
     if(!post) return null;
 
     return (
-        <article className="flex flex-col w-full max-w-2xl mx-auto p-4 sm:p-6 my-4 bg-[var(--color-tarjet)] border border-white/80  rounded-2xl shadow-2xl text-white  transition-all duration-300">  
+        <article className="flex flex-col w-full max-w-2xl mx-auto p-4 sm:p-2 my-2 bg-[var(--color-tarjet)] border border-white/80  rounded-2xl shadow-2xl text-white  transition-all duration-300">  
             
             <header className="flex items-center gap-3 pb-4 " >
                 <img 
@@ -20,16 +20,16 @@ export default function  PostCard ({ post }) {
                 <time className="ml-auto text-sm text-purple-200/70" dateTime= { post.createdAt }> { post.createdAt }</time>
             </header>
 
-            <section className="-my-6 ml-14">
+            <section className="">
                 <p className="text-xl sm:text-base text-gray-200 leading-tight" >{ post.content}</p>
                 {post.media && post.media.length > 0 && (
-                    <ul className="flex flex-wrap gap-3 pt-2 list-none p-0">
+                    <ul className="flex flex-wrap gap-3 pt-2 justify-center list-none p-0">
                         {post.media.map((item)=>(
                             <li key={item.id}>
                                 <img 
                                 src={item.icon}
                                 alt={item.name}
-                                className="w-32 h-32  rounded-4xl object-contain transition-transform duration-300 ease-in-out hover:scale-115 cursor-pointer"
+                                className="sm:flex flex-wrap size-16 object-contain transition-transform duration-300 ease-in-out hover:scale-115 cursor-pointer rounded-2xl md:rounded-2xl"
                             />
                             </li>
                         ))}

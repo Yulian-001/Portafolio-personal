@@ -5,8 +5,8 @@ import profile from './data/profile.json'
 
 export default function App() {
   return (
-    <main className="  bg-[var(--color-fondo)]">
-      <div className=' flex gap-6 mx-12'>
+    <main className=" bg-[var(--color-fondo)] ">
+      <div className='flex flex-col justify-center md:flex-row gap-6 mx-6 lg:mx-16 py-6'>
       <section >
 
         {posts.map((item)=>(
@@ -14,7 +14,7 @@ export default function App() {
       ))}
 
       </section>
-      <section>
+      <section className=''>
 
         {profile.map((item)=>(
         <Profile key={item.id} prof={item} />
