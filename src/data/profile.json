@@ -9,8 +9,11 @@
         "phone": " +57 3144533840",
         "studies": {
             "technologist": "/LogoSena.png",
-            "bootcam": "/logoTalentoTech.png"
+            "infoSena":"Tecnológo en Análisis y Desarrollo de Software",
+            "bootcam": "/logoTalentoTech.png",
+            "infoBootcam":"Tecnológo en Análisis y Desarrollo de Software"
         },
+        
         "terminalLogs": [
             {
                 "id": "log-1",

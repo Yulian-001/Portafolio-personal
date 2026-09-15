@@ -10,7 +10,7 @@ export  function Options() {
     return(
         <div>
                 <button>
-                    <FiMoreHorizontal className="bg-mist-700/60 p-1  size-6 md:size-8 rounded-full border" />
+                    <FiMoreHorizontal className="bg-mist-700/60 p-1 mt-1  size-5 lg:size-8 rounded-full border" />
                     <span className="text-xs font-medium">
                     </span>
                 </button>

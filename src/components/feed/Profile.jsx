@@ -17,16 +17,16 @@ export default function Profile( {prof} ){
     ];
     
     return(
-        <article className="m w-full max-w-4xl mx-auto p-4 sm:p-6 my-2  bg-[var(--color-tarjet)] border border-white/80 rounded-2xl     text-white transition-all duration-300">
+        <article className="w-full max-w-4xl mx-auto p-4 sm:p-6 my-2  bg-[var(--color-tarjet)] border border-white/80 rounded-2xl     text-white transition-all duration-300">
             <div className="border  border-white/60 -mx-4 md:-mx-5 lg:-mx-6  translate-y-18    "></div>
-            <header className="flex justify-between items-center mt-12">
+            <header className="flex md:justify-between items-center mt-12 mb-6">
                 <img 
                 src={prof.avatar}
                 alt="Logo sena"
-                className="size-20 purple-600/70 p-1  rounded-full ring-2 ring-white translate-x-8 "
+                className="-ml-8 lg:ml-8 size-14  lg:size-20 purple-600/70 p-1  rounded-full ring-2 ring-white translate-x-8 "
                 />
-                <div className="flex  items-center  gap-4 mt-4">
-                    <h6 className="font-light md:font-black px-3 text-sm md:text-lg  text-white/90 bg-mist-700/60  rounded-full border  ">Seguir</h6>
+                <div className="flex  items-center  gap-4 mt-6 lg:mt-4">
+                    <h6 className="px-3 py-0.5  text-xs font-medium lg:font-bold lg:text-lg  text-white/90 bg-mist-700/60  rounded-full border  ">Seguir</h6>
                         
                     <Options/>
                     
@@ -50,7 +50,7 @@ export default function Profile( {prof} ){
                 <div className="flex flex-row gap-4 items-center flex-wrap">
                     <h4 className="font-medium md:text-lg md:font-bold ">Estudios |</h4>
                     {studiesList.map((study,index)=>(
-                        <div key={index} className="relative  rounded-full ">
+                        <div key={index} className="relative size-12 lg:size-18 rounded-full ">
                         <svg className="absolute -inset-1 size-[calc(100%+8px)] animate-spin"
                         viewBox="0 0 100 100"
                         >
@@ -67,7 +67,7 @@ export default function Profile( {prof} ){
                             ></circle>
                         </svg>
                         <img 
-                        className={`rounded-full size-18 object-cover relative z-10`}
+                        className={`rounded-full size-full object-cover relative z-10`}
                         src={study.img}
                         alt={study.alt} />
                     </div>
