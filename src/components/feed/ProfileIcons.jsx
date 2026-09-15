@@ -3,34 +3,53 @@ import { IoLocationOutline } from "react-icons/io5";
 import { AiOutlineMail } from "react-icons/ai";
 import { LuPhone } from "react-icons/lu";
 
-export default function ProfileIcons ({metrics}) {
+
+
+
+export  function Options() {
     return(
-        <section>
-            <header>
-                <div>
+        <div>
                 <button>
-                    <FiMoreHorizontal className="bg-mist-700/60 p-1 size-8 rounded-full border-1" />
+                    <FiMoreHorizontal className="bg-mist-700/60 p-1  size-6 md:size-8 rounded-full border" />
                     <span className="text-xs font-medium">
                     </span>
                 </button>
                 </div>
-            </header>
+    )
+}
 
-            <main>
+export  function Location() {
+    return(
+        <div>
+                <button>
+                    <IoLocationOutline className="  size-4 md:size-8 " />
+                    <span className="text-xs font-medium">
+                    </span>
+                </button>
+                </div>
+    )
+}
+
+export  function Emails() {
+    return(
+        <div>
+                <button>
+                    <AiOutlineMail className="   size-4 md:size-8 " />
+                    <span className="text-xs font-medium">
+                    </span>
+                </button>
+                </div>
+    )
+}
+
+export  function Phone ({metrics}) {
+    return(
+        <section>
                 <div>
                     <button>
-                        <IoLocationOutline size={25}/>
-                    </button>
-
-                    <button>
-                        <AiOutlineMail size={25}/>
-                    </button>
-
-                    <button>
-                        <LuPhone size={25}/>
+                        <LuPhone className="size-4 md:size-8 "/>
                     </button>
                 </div>
-            </main>
         </section>
     )
 }

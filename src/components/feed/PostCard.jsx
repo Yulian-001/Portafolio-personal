@@ -5,9 +5,9 @@ export default function  PostCard ({ post }) {
     if(!post) return null;
 
     return (
-        <article className="flex flex-col w-full max-w-2xl mx-auto p-4 sm:p-6 my-4 bg-[var(--color-tarjet)] border border-white/80  rounded-2xl shadow-2xl text-white  transition-all duration-300">  
+        <article className="flex flex-col w-full max-w-3xl mx-auto  pr-3 ml-12  p-2 my-3 bg-[var(--color-tarjet)] border border-white/80  rounded-2xl shadow-2xl text-white  transition-all duration-300l ">  
             
-            <header className="flex items-center gap-3 pb-4 " >
+            <header className="flex items-center gap-3 pb-4 mx-3 " >
                 <img 
                 src={post.author.avatar} 
                 alt={ post.author.name }
@@ -20,23 +20,23 @@ export default function  PostCard ({ post }) {
                 <time className="ml-auto text-sm text-purple-200/70" dateTime= { post.createdAt }> { post.createdAt }</time>
             </header>
 
-            <section className="-my-6 ml-14">
-                <p className="text-xl sm:text-base text-gray-200 leading-tight" >{ post.content}</p>
+            <section >
+                <p className=" text-xl sm:text-base ml-12 md:text-xl -translate-y-2 lg:ml-14 lg:-translate-y-6 pl-4  text-gray-200 leading-tight" >{ post.content}</p>
                 {post.media && post.media.length > 0 && (
-                    <ul className="flex flex-wrap gap-3 pt-2 list-none p-0">
+                    <ul className="flex flex-wrap  justify-center  ml-4 md:ml-8   gap-2">
                         {post.media.map((item)=>(
                             <li key={item.id}>
                                 <img 
                                 src={item.icon}
                                 alt={item.name}
-                                className="w-32 h-32  rounded-4xl object-contain transition-transform duration-300 ease-in-out hover:scale-115 cursor-pointer"
+                                className="  size-18  md:size-20 lg:size-30 mx-1 object-contain transition-transform duration-300 ease-in-out hover:scale-110  cursor-pointer rounded-2xl "
                             />
                             </li>
                         ))}
                     </ul>
                 )}
                     {post.projects && post.projects.length > 0 &&(
-                    <ul className="space-y-3 pt-2" >
+                    <ul className="space-y-3 pt-2 ml-13" >
                         {post.projects.map((item)=> (
                             <li key={item.id} className="p-3">
                                 <ol>

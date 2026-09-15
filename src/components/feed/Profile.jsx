@@ -1,39 +1,48 @@
-import ProfileIcons from "./ProfileIcons";
+import { Location, Phone, Emails, Options } from "./ProfileIcons";
 
 export default function Profile( {prof} ){
     if(!prof) return null;
     
     return(
-        <article className=" w-full max-w-4xl mx-auto p-4 sm:p-6 my-4 bg-[var(--color-tarjet)] border border-white/80 rounded-2xl    text-white transition-all duration-300">
-            <header className="  justify-between">
+        <article className="m w-full max-w-4xl mx-auto p-4 sm:p-6 my-2  bg-[var(--color-tarjet)] border border-white/80 rounded-2xl     text-white transition-all duration-300">
+            <div className="border  border-white/60 -mx-4 md:-mx-5 lg:-mx-6  translate-y-18    "></div>
+            <header className="flex justify-between items-center mt-12">
                 <img 
                 src={prof.avatar}
                 alt="Logo sena"
-                className="size-20 purple-600/70 p-1 rounded-full ring-2 ring-white"
+                className="size-20 purple-600/70 p-1  rounded-full ring-2 ring-white translate-x-8 "
                 />
-                <h3 className="text-xl text-white/90 bg-mist-700/60  rounded-2xl border-2 ">Seguir</h3>
-                <div>
-                    <ProfileIcons/>
+                <div className="flex  items-center  gap-4 mt-4">
+                    <h6 className="font-light md:font-black px-3 text-sm md:text-lg  text-white/90 bg-mist-700/60  rounded-full border  ">Seguir</h6>
+                        
+                    <Options/>
+                    
                 </div>
             </header>
 
             <section>
                 <div>
-                <h2>{prof.name}</h2>
-                <p>{prof.description} </p>
-                <h4>{prof.location} </h4>
-                <h4>{prof.gmail} </h4>
-                <h4>{prof.phone} </h4>
+
+                    <h2 className="font-bold text-xl my-2">{prof.name}</h2>
+                    <p className="text-md lg:text-lg leading-normal mb-4">{prof.description} </p>
+                    <div className=" flex flex-wrap  text-sm items-center  md:gap-02  mb-4">
+                    <Location/>
+                    <h4 className="mr-4 ml-2 md:mr-6 ">{prof.location} </h4>
+                    <Emails/>
+                    <h4 className="mr-4 ml-2 md:mr-6 ">{prof.gmail} </h4>
+                    <Phone/>
+                    <h4 className="mr-4 ml-2 md:mr-6 ">{prof.phone} </h4>
+                    </div>
                 </div>
-                <div className="flex flex-line gap-4 justify-start">
-                    <h4>Estudios</h4>
+                <div className="flex flex-line gap-4 items-center">
+                    <h4 className="font-medium md:text-lg md:font-bold ">Estudios |</h4>
                     <img src={prof.studies.technologist}
                     alt="Logo Sena" 
-                    className="size-10 rounded-full  ring-4 ring-green-300 "
-                    />
+                    className="size-14 rounded-full  ring-4 ring-green-300 "
+                    />          
                     <img src={prof.studies.bootcam} 
                     alt="Logo Talento Techo"
-                    className="size-10 rounded-full ring-4 ring-pink-700/90"
+                    className="size-14 rounded-full ring-4 ring-pink-700/90"
                     />
                 </div>
             </section>
