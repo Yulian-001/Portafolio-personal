@@ -2,6 +2,19 @@ import { Location, Phone, Emails, Options } from "./ProfileIcons";
 
 export default function Profile( {prof} ){
     if(!prof) return null;
+
+    const studiesList = [
+        {
+            img: prof.studies.technologist,
+            alt: "Logo Sena",
+            spinnerColor: "stroke-green-500"
+        },
+        {
+            img: prof.studies.bootcam,
+            alt: "Logo Talento Tech",
+            spinnerColor: "stroke-purple-500"
+        }
+    ];
     
     return(
         <article className="m w-full max-w-4xl mx-auto p-4 sm:p-6 my-2  bg-[var(--color-tarjet)] border border-white/80 rounded-2xl     text-white transition-all duration-300">
@@ -22,7 +35,6 @@ export default function Profile( {prof} ){
 
             <section>
                 <div>
-
                     <h2 className="font-bold text-xl my-2">{prof.name}</h2>
                     <p className="text-md lg:text-lg leading-normal mb-4">{prof.description} </p>
                     <div className=" flex flex-wrap  text-sm items-center  md:gap-02  mb-4">
@@ -34,17 +46,34 @@ export default function Profile( {prof} ){
                     <h4 className="mr-4 ml-2 md:mr-6 ">{prof.phone} </h4>
                     </div>
                 </div>
-                <div className="flex flex-line gap-4 items-center">
+                    
+                <div className="flex flex-row gap-4 items-center flex-wrap">
                     <h4 className="font-medium md:text-lg md:font-bold ">Estudios |</h4>
-                    <img src={prof.studies.technologist}
-                    alt="Logo Sena" 
-                    className="size-14 rounded-full  ring-4 ring-green-300 "
-                    />          
-                    <img src={prof.studies.bootcam} 
-                    alt="Logo Talento Techo"
-                    className="size-14 rounded-full ring-4 ring-pink-700/90"
-                    />
+                    {studiesList.map((study,index)=>(
+                        <div key={index} className="relative  rounded-full ">
+                        <svg className="absolute -inset-1 size-[calc(100%+8px)] animate-spin"
+                        viewBox="0 0 100 100"
+                        >
+                            <circle
+                            cx="50"
+                            cy="50"
+                            r="44"
+                            fill="none"
+                            strokeWidth="6"
+                            strokeLinecap="round"
+                            className={study.spinnerColor}
+
+                            strokeDasharray="120 10 120"
+                            ></circle>
+                        </svg>
+                        <img 
+                        className={`rounded-full size-18 object-cover relative z-10`}
+                        src={study.img}
+                        alt={study.alt} />
+                    </div>
+                    ))}
                 </div>
+
             </section>
 
             <footer>
