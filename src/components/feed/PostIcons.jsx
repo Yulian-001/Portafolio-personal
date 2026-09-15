@@ -4,9 +4,10 @@ import { HiSave } from "react-icons/hi";
 import { BiRepost } from "react-icons/bi";
 import { FiShare2 } from "react-icons/fi";
 
+
 export default function PostFooder({metrics}){
 return (
-    <footer className="flex items-center justify-between pt-10 mt-2 text-purple-300/70">
+    <footer className="flex items-center justify-between pt-4 pb-2 mx-14  text-purple-300/70">
         <div className="flex items-center gap-6">
 
             <button className="flex items-center gap-2 transition-colors hover:text-purple-300 group" aria-label="Comentarios">
