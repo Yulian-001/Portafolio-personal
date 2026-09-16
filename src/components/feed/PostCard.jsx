@@ -78,7 +78,7 @@ export default function PostCard({ post }) {
                                             strokeLinecap="round"
                                             stroke="url(#rainbow-gradient)"
                                             className={`${!isLastItem ? assignedColor : ""} animate-travel`}
-                                            strokeDasharray="220  10"
+                                            strokeDasharray="80 10"
                                         />
                                     </svg>
 
