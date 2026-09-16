@@ -1,18 +1,28 @@
 [
     {
         "id": "profile-1",
-        "avatar":"/FotoLuffy.png",
+        "avatar": "/FotoLuffy.png",
         "name": "Yulian Andrés Soracá Castañeda",
         "description": "Desarrollador Frontend y Explorador Tecnológico. Programador de código limpio. Construyendo UIs dinamicas con React/Vue 🌐  Próxima camino: Backends Robustos. 💻 Estudiante de Análisis y Desarrollo de Software | Futuro Ingeniero de Software 🎓",
         "location": "De Colombia",
         "gmail": "soracayulian@gmail.com",
         "phone": " +57 3144533840",
-        "studies": {
-            "technologist": "/LogoSena.png",
-            "infoSena":"Tecnológo en Análisis y Desarrollo de Software",
-            "bootcam": "/logoTalentoTech.png",
-            "infoBootcam":"Tecnológo en Análisis y Desarrollo de Software"
-        },
+        "studies": [
+            {
+                "src": "/LogoSena.png",
+                "alt": "Logo Sena",
+                "title":"Análisis y Desarrollo de Software",
+                "info": "Enfocado en transformar necesidades de negocio en aplicaciones eficientes, escalables y seguras. Mi formación me capacita para dominar todo el ciclo de vida del software: desde el análisis técnico y el diseño de bases de datos, hasta la programación backend/frontend y el despliegue bajo metodologías ágiles.",
+                "spinnerColor": "stroke-green-500"
+            },
+            {
+                "src": "/logoTalentoTech.png",
+                "alt": "Logo Talento Tech",
+                "title":"Arquitectura en la Nube",
+                "info": "Cuento con una sólida formación práctica para diseñar, migrar y gestionar infraestructuras digitales eficientes, escalables y seguras. Mi enfoque está en optimizar el uso de servicios cloud fundamentales (IaaS/PaaS), implementar alta disponibilidad y aplicar las mejores prácticas de gobernanza, seguridad y costos para la transformación digital de las organizaciones.",
+                "spinnerColor": "stroke-purple-500"
+            }
+        ],
         
         "terminalLogs": [
             {
