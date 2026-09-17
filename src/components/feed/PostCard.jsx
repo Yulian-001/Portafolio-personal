@@ -21,7 +21,7 @@ export default function PostCard({ post }) {
             </header>
 
             <section >
-                <p className=" text-xl sm:text-base ml-12 md:text-xl -translate-y-2 lg:ml-14 lg:-translate-y-6 pl-4  text-gray-200 leading-tight" >{post.content}</p>
+                <p className=" text-xl sm:text-base ml-12 md:text-lg -translate-y-2 lg:ml-14 lg:-translate-y-6 pl-4   leading-tight md:font-thin text-white/85 " >{post.content}</p>
                 {post.media && post.media.length > 0 && (
                     <ul className="flex flex-wrap  justify-center  ml-4 md:ml-8   gap-2">
 
@@ -98,7 +98,7 @@ export default function PostCard({ post }) {
                             <li key={item.id} className="p-3">
                                 <ol>
                                     <h4 className="pb-3 text-xl font-medium" >{item.name}</h4>
-                                    <p className="mb-3">{item.description}</p>
+                                    <p className="mb-3 text-lg">{item.description}</p>
                                     <a className="mx-3 font-mono text-xl text-blue-600 hover:text-purple-300 underline"
                                         href={item.githubUrl}
                                         target="_blank"
