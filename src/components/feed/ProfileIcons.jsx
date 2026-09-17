@@ -22,7 +22,7 @@ export  function Location() {
     return(
         <div>
                 <button>
-                    <IoLocationOutline className="  size-4 md:size-8 " />
+                    <IoLocationOutline className="  size-6 lg:size-8 " />
                     <span className="text-xs font-medium">
                     </span>
                 </button>
@@ -34,7 +34,7 @@ export  function Emails() {
     return(
         <div>
                 <button>
-                    <AiOutlineMail className="   size-4 md:size-8 " />
+                    <AiOutlineMail className="   size-6 lg:size-8 " />
                     <span className="text-xs font-medium">
                     </span>
                 </button>
@@ -47,7 +47,7 @@ export  function Phone ({metrics}) {
         <section>
                 <div>
                     <button>
-                        <LuPhone className="size-4 md:size-8 "/>
+                        <LuPhone className="size-6 lg:size-8 "/>
                     </button>
                 </div>
         </section>
