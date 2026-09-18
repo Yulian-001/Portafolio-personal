@@ -18,3 +18,13 @@
 
     --font-fontConsole: "Orbitron", sans-serif;
 }
+
+
+@keyframes latido {
+    0%, 100% { transform: scale(1.3);}
+    50% { transform: scale(1.10);}
+}
+
+.animate-latir {
+    animation: latido 1.4s ease-in-out infinite;
+}

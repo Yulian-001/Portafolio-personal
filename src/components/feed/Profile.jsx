@@ -1,14 +1,16 @@
-import { Location, Phone, Emails, Options } from "./ProfileIcons";
 import { useState } from "react";
-import TerminalConsole from "../TerminalConsole";
+import { Location, Phone, Emails, Options, Whatsapp } from "./ProfileIcons";
+import TerminalConsole from "./TerminalConsole.jsx"
 
 export default function Profile({ prof }) {
     if (!prof) return null;
 
-    const [selectStudie, setSelectStudie] = useState(null);
+    const [ selectStudie, setSelectStudie] = useState(null)
 
     return (
-        <article className="w-full max-w-4xl mx-auto p-4 sm:p-6 my-2  bg-tarjet border border-white/80 rounded-2xl     text-white transition-all duration-300">
+        <article
+        className={`w-full max-w-4xl mx-auto p-4 sm:p-6 my-2  bg-tarjet border border-white/80 rounded-2xl     text-white transition-all duration-300`}>
+
             <div className="border  border-white/60 -mx-4 md:-mx-5 lg:-mx-6   md:mt-8 translate-y-20    "></div>
             <header className="flex justify-between items-center mt-12  mb-6">
                 <img
@@ -28,7 +30,7 @@ export default function Profile({ prof }) {
                 <div>
                     <h2 className="font-bold text-xl my-2">{prof.name}</h2>
                     <p className="text-md lg:text-lg leading-normal mb-4">{prof.description} </p>
-                    <div className=" flex flex-col lg:flex-row  text-sm items-start lg:items-center  md:gap-02  mb-4">
+                    <div className=" flex flex-col lg:flex-row  text-sm items-start lg:items-center  md:gap-2  mb-4">
                         <div className="flex flex-row items-center">
                             <Location />
                             <h4 className="mr-4 ml-2 md:mr-6 ">{prof.location} </h4>
@@ -37,9 +39,20 @@ export default function Profile({ prof }) {
                             <Emails />
                             <h4 className="mr-4 ml-2 md:mr-6 ">{prof.gmail} </h4>
                         </div>
-                        <div className="flex flex-row items-center">
-                            <Phone />
-                            <h4 className="mr-4 ml-2 md:mr-6 ">{prof.phone} </h4>
+                        <div className="flex flex-row items-center gap-2">
+                        <Phone />
+                        <h3 className="mr-">+57 3144533840</h3>
+                        
+                        </div>
+                        <div className="my-2 animate-latir">
+                            <a
+                            title="Chat directo a WhatsApp"
+                            href="https://wa.me/573144533840?text=Hola%20estoy%20interesado%20en%20ti"
+                            rel="noopener noreferrer" 
+                            target="_blank"
+                            >
+                            <Whatsapp />
+                        </a >
                         </div>
                     </div>
                 </div>
@@ -67,7 +80,6 @@ export default function Profile({ prof }) {
                                         }}
                                     />
                                 )}
-
 
                                 <div className={`
                                         absolute lg:w-md md:translate-y-22 px-4 py-6 bg-black/95 border border-white/20 text-white text-xs md:text-lg rounded-xl shadow-xl transition-all duration-300 z-30
@@ -99,7 +111,7 @@ export default function Profile({ prof }) {
                                     ></circle>
                                 </svg>
                                 <img
-                                    className={`rounded-full size-full object-cover relative z-10`}
+                                    className={`rounded-full size-full object-cover relative z-10 animate-pulse `}
                                     src={src}
                                     alt={alt} />
                             </div>
@@ -111,8 +123,6 @@ export default function Profile({ prof }) {
                     <TerminalConsole prof={prof.terminalLogs} />
                 </div>
             </section>
-
-
         </article>
     )
 }
