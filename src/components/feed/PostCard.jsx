@@ -5,7 +5,7 @@ export default function PostCard({ post }) {
     if (!post) return null;
 
     return (
-        <article className="flex flex-col w-full max-w-3xl mx-auto  pr-3 ml-12  p-2 my-3 bg-[var(--color-tarjet)] border border-white/80  rounded-2xl shadow-2xl text-white  transition-all duration-300l ">
+        <article className="flex flex-col w-full max-w-3xl mx-auto  pr-3 ml-12  p-2 my-3 bg-tarjet border border-white/80  rounded-2xl shadow-2xl text-white  transition-all duration-300l ">
 
             <header className="flex items-center gap-3 pb-4 mx-3 " >
                 <img
