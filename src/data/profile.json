@@ -11,79 +11,98 @@
             {
                 "src": "/LogoSena.png",
                 "alt": "Logo Sena",
-                "title":"Análisis y Desarrollo de Software",
+                "title": "Análisis y Desarrollo de Software",
                 "info": "Enfocado en transformar necesidades de negocio en aplicaciones eficientes, escalables y seguras. Mi formación me capacita para dominar todo el ciclo de vida del software: desde el análisis técnico y el diseño de bases de datos, hasta la programación backend/frontend y el despliegue bajo metodologías ágiles.",
                 "spinnerColor": "stroke-green-500"
             },
             {
                 "src": "/logoTalentoTech.png",
                 "alt": "Logo Talento Tech",
-                "title":"Arquitectura en la Nube",
+                "title": "Arquitectura en la Nube",
                 "info": "Cuento con una sólida formación práctica para diseñar, migrar y gestionar infraestructuras digitales eficientes, escalables y seguras. Mi enfoque está en optimizar el uso de servicios cloud fundamentales (IaaS/PaaS), implementar alta disponibilidad y aplicar las mejores prácticas de gobernanza, seguridad y costos para la transformación digital de las organizaciones.",
                 "spinnerColor": "stroke-purple-500"
             }
         ],
-        
         "terminalLogs": [
             {
                 "id": "log-1",
-                "type": "PROBLEMA",
-                "title": "FUGA DE MEMORIA POR SUSCRIPCIONES WEBSOCKET NO FINALIZADAS AL DESMONTAR COMPONENTES",
-                "timestamps": "Time: 14:02:11.04"
+                "problem":"PROBLEMA",
+                "title": "RE-RENDERS INNECESARIOS POR FUNCIONES ANÓNIMAS EN EL RENDER",
+                "timestamps": "Time: 14:02:11.04",
+                "solution":"SOLUCION",
+                "typeSolution": "Memorizar callbacks con useCallback y usar referencias estables para evitar disparar efectos en cascada."
             },
             {
                 "id": "log-2",
-                "type": "SOLUCIÓN",
-                "title": "IMPLEMENTACIÓN DE VIRTUALIZACIÓN DE TABLAS (WINDOWING) PARA RENDERIZAR 10,000+ FILAS SIN SATURAR EL DOM",
-                "timestamps": "Time: 14:02:21.15"
+                "problem":"PROBLEMA",
+                "title": "PROBLEMA N+1 EN CONSULTAS SQL DESDE EL BACKEND",
+                "timestamps": "Time: 14:15:30.12",
+                "solution":"SOLUCION",
+                "typeSolution": "Reemplazar múltiples consultas individuales en bucles por una única sentencia utilizando JOINs o cláusulas IN."
             },
             {
                 "id": "log-3",
-                "type": "PROBLEMA",
-                "title": "CONDICIÓN DE CARRERA (RACE CONDITION) EN PETICIONES HTTP ASÍNCRONAS DENTRO DEL BUSCADOR EN TIEMPO REAL",
-                "timestamps": "Time: 14:02:31.28"
+                "problem":"PROBLEMA",
+                "title": "CONDICIÓN DE CARRERA EN PETICIONES ASÍNCRONAS CON USEEFFECT",
+                "timestamps": "Time: 14:28:45.89",
+                "solution":"SOLUCION",
+                "typeSolution": "Implementar una bandera booleana de cancelación o abortar la petición usando AbortController nativo."
             },
             {
                 "id": "log-4",
-                "type": "SOLUCIÓN",
-                "title": "DESACOPLAMIENTO DE PETICIONES OBSOLETAS MEDIANTE ABORTCONTROLLER Y PATRÓN DEBOUNCE A NIVEL DE HOOK",
-                "timestamps": "Time: 14:02:41.40"
+                "problem":"PROBLEMA",
+                "title": "PÉRDIDA DE REACTIVIDAD POR MUTACIÓN DIRECTA DEL ESTADO",
+                "timestamps": "Time: 14:40:02.50",
+                "solution":"SOLUCION",
+                "typeSolution": "Respetar la inmutabilidad creando copias superficiales de objetos y arrays mediante el operador spread (...) antes de actualizar."
             },
             {
                 "id": "log-5",
-                "type": "OPTIMIZACIÓN",
-                "title": "REFACTORIZACIÓN DE ESTADO GLOBAL EN REACT CONTEXT DIVIDIENDO PROVIDERS PARA EVITAR CASCADAS DE RE-RENDERS",
-                "timestamps": "Time: 14:02:51.52"
+                "problem":"PROBLEMA",
+                "title": "CRASH DEL SERVIDOR NODE POR PROMESAS ASÍNCRONAS NO CAPTURADAS",
+                "timestamps": "Time: 15:02:19.33",
+                "solution":"SOLUCION",
+                "typeSolution": "Envolver los controladores de rutas en bloques try/catch o usar un middleware global de manejo de errores en Express."
             },
             {
                 "id": "log-6",
-                "type": "SEGURIDAD",
-                "title": "MANEJO DE INTERCEPTORES HTTP PARA RENOVACIÓN SILENCIOSA DE REFRESH TOKENS JWT ANTE ERRORES 401 UN-AUTHORIZED",
-                "timestamps": "Time: 14:03:01.65"
+                "problem":"PROBLEMA",
+                "title": "ACUMULACIÓN DE EVENT LISTENERS GLOBALES EN WINDOW",
+                "timestamps": "Time: 15:20:11.77",
+                "solution":"SOLUCION",
+                "typeSolution": "Asegurar la limpieza del listener retornando la función removeEventListener en el return del useEffect."
             },
             {
                 "id": "log-7",
-                "type": "ARQUITECTURA",
-                "title": "ESTRATEGIA DE CACHÉ EN CLIENTE CON STALE-WHILE-REVALIDATE PARA REDUCIR PETICIONES REDUNDANTES A LA API",
-                "timestamps": "Time: 14:03:11.79"
+                "problem":"PROBLEMA",
+                "title": "VULNERABILIDAD A SQL INJECTION EN CONSULTAS DINÁMICAS",
+                "timestamps": "Time: 15:45:00.15",
+                "solution":"SOLUCION",
+                "typeSolution": "Utilizar consultas parametrizadas ($1, $2 o ?) en lugar de interpolación de strings con template literals."
             },
             {
                 "id": "log-8",
-                "type": "SOLUCIÓN",
-                "title": "SINCRONIZACIÓN DE ESTADO MULTI-PESTAÑA EN TIEMPO REAL MEDIANTE BROADCAST CHANNEL API E INDEXEDDB",
-                "timestamps": "Time: 14:03:21.91"
+                "problem":"PROBLEMA",
+                "title": "DISPARO DE EFECTOS EN BUCLE POR DEPENDENCIAS INSTABLES EN USEEFFECT",
+                "timestamps": "Time: 16:01:44.20",
+                "solution":"SOLUCION",
+                "typeSolution": "Estabilizar las dependencias extrayendo funciones puras fuera del componente o memorizando objetos con useMemo."
             },
             {
                 "id": "log-9",
-                "type": "PROBLEMA",
-                "title": "DESVIACIÓN DE MAQUETADO (CLS) PROVOCADO POR LA CARGA ASÍNCRONA DE FUENTES PERSONALIZADAS Y ASSETS",
-                "timestamps": "Time: 14:03:32.05"
+                "problem":"PROBLEMA",
+                "title": "FALTA DE PAGINACIÓN Y LÍMITE EN CONSULTAS SQL MASIVAS",
+                "timestamps": "Time: 16:22:10.90",
+                "solution":"SOLUCION",
+                "typeSolution": "Implementar paginación a nivel de base de datos usando LIMIT y OFFSET para evitar saturar la memoria del servidor."
             },
             {
                 "id": "log-10",
-                "type": "OPTIMIZACIÓN",
-                "title": "DIVISIÓN DE CÓDIGO (CODE SPLITTING) Y DYNAMIC IMPORTS REDUCIENDO EL TAMAÑO DEL BUNDLE INICIAL EN UN 40%",
-                "timestamps": "Time: 14:03:42.18"
+                "problem":"PROBLEMA",
+                "title": "BLOQUEO DEL HILO PRINCIPAL POR PROCESAMIENTO PESADO EN FRONTEND",
+                "timestamps": "Time: 16:50:05.41",
+                "solution":"SOLUCION",
+                "typeSolution": "Delegar cálculos pesados a Web Workers o fragmentar la ejecución iterativa usando requestIdleCallback."
             }
         ]
     }

@@ -6,5 +6,15 @@
     --color-fondo:#2e0130;
     --color-tarjet:#3d0840;
     --color-post:#280835;
+    --color-containConsole:#5f4287;
+    --color-fontProblem:#931332;
+    --color-fontConsole:#9a95a9;
+    --color-fontSolution:#0f961a;
+    --color-fontTimestamp:#e5c78a;
+    --color-consoleRed:#d95e5e;
+    --color-consoleYellow:#d9b85e;
+    --color-consoleGreen:#4cd364;
     --font-fontPost:  "Inter", sans-serif;
+
+    --font-fontConsole: "Orbitron", sans-serif;
 }

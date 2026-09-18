@@ -1,5 +1,6 @@
 import { Location, Phone, Emails, Options } from "./ProfileIcons";
 import { useState } from "react";
+import TerminalConsole from "../TerminalConsole";
 
 export default function Profile({ prof }) {
     if (!prof) return null;
@@ -7,7 +8,7 @@ export default function Profile({ prof }) {
     const [selectStudie, setSelectStudie] = useState(null);
 
     return (
-        <article className="w-full max-w-4xl mx-auto p-4 sm:p-6 my-2  bg-[var(--color-tarjet)] border border-white/80 rounded-2xl     text-white transition-all duration-300">
+        <article className="w-full max-w-4xl mx-auto p-4 sm:p-6 my-2  bg-tarjet border border-white/80 rounded-2xl     text-white transition-all duration-300">
             <div className="border  border-white/60 -mx-4 md:-mx-5 lg:-mx-6   md:mt-8 translate-y-20    "></div>
             <header className="flex justify-between items-center mt-12  mb-6">
                 <img
@@ -69,14 +70,14 @@ export default function Profile({ prof }) {
 
 
                                 <div className={`
-                                        absolute lg:w-xl md:translate-y-22 px-4 py-6 bg-black/95 border border-white/20 text-white text-xs md:text-lg rounded-xl shadow-xl transition-all duration-300 z-30
+                                        absolute lg:w-md md:translate-y-22 px-4 py-6 bg-black/95 border border-white/20 text-white text-xs md:text-lg rounded-xl shadow-xl transition-all duration-300 z-30
                                         /* Comportamiento Móvil: Controlado por JS */
                                         w-[280px] -translate-x-1/2 left-1/2 mt-14 
                                         ${isActive
                                         ? 'opacity-100 pointer-events-auto '
                                         : 'hidden lg:block md:opacity-0 md:pointer-events-none'}
                                         /* Comportamiento Desktop: Sigue funcionando con Hover */
-                                        md:left-auto md:translate-x-0 md:mt-0 md:group-hover:opacity-100 md:pointer-events-none
+                                        md:left-auto xl:-translate-x-3 md:-translate-x-49 md:mt-0 md:group-hover:opacity-100 md:pointer-events-none
                                     `}>
                                     <h3 className=" text-xl flex justify-center pb-3 font-bold">{title} </h3>
                                     <p >{info} </p>
@@ -106,17 +107,12 @@ export default function Profile({ prof }) {
                     })}
                 </div>
 
+                <div className="flex  justify-center mt-12 ">
+                    <TerminalConsole prof={prof.terminalLogs} />
+                </div>
             </section>
 
-            <footer>
-                <div>
-                    <div></div>
-                    <div>
 
-                    </div>
-                </div>
-
-            </footer>
         </article>
     )
 }
