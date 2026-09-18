@@ -1,11 +1,13 @@
 import PostIcons from "./PostIcons"
 
-
 export default function PostCard({ post }) {
     if (!post) return null;
 
+
+
     return (
         <article className="flex flex-col w-full max-w-3xl mx-auto  pr-3 ml-12  p-2 my-3 bg-tarjet border border-white/80  rounded-2xl shadow-2xl text-white  transition-all duration-300l ">
+
 
             <header className="flex items-center gap-3 pb-4 mx-3 " >
                 <img
@@ -50,7 +52,7 @@ export default function PostCard({ post }) {
                             const assignedColor = spinnerColors[index % spinnerColors.length];
                             const isLastItem = index === post.media.length - 1;
                             return (
-                                <li key={item.id} className="relative group cursor-pointer p-2 size-22   sm:-p-2 md:size-32 m-1" >
+                                <li key={item.id} className="relative group cursor-pointer p-2 size-22   sm:-p-2 md:size-32 m-1  hover:animate-bounce ease-in-out " >
 
                                     <svg className={`absolute  -inset-1.5 size-[calc(100%+12px)]   opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
                                         viewBox="0 0 100 100"

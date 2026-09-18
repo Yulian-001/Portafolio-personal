@@ -11,7 +11,7 @@ export default function TerminalConsole({ prof = [] }) {
 
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % prof.length);
-        }, 2000);
+        }, 20000); // 20 segundos
 
         return () => clearInterval(interval);
     }, [prof.length]);
@@ -35,7 +35,7 @@ export default function TerminalConsole({ prof = [] }) {
     return (
         <section >
             <div className="flex  justify-center " >
-                <div className="  w-[22rem] text-sm md:text-xs md:w-[12rem]  lg:min-w-sm lg:max-w-3xl xl:w-4xl xl:text-2xl font-fontConsole font-black  bg-containConsole pt-2 pb-2 rounded-3xl">
+                <div className="  w-[22rem] text-sm md:text-xs md:w-[12rem]  lg:min-w-sm lg:max-w-2xl   xl:max-w-[96rem] xl:min-w-xl xl:text-lg font-fontConsole font-black  bg-containConsole pt-2 pb-2 rounded-3xl">
 
                     {/* ==== CONTENEDOR 3 PUNTOS === */}
                     <div className="flex flex-row mx-6 mb-2  gap-1 ">
