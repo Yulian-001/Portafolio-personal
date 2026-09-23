@@ -1,16 +1,52 @@
-# React + Vite
+Portafolio Personal — Yulian Soracá
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> Espacio de trabajo enfocado en ingeniería de software limpia. Diseño sistemas orientados al rendimiento, flujos asíncronos robustos y UIs modulares.
 
-Currently, two official plugins are available:
+[![Demo en Vivo](https://img.shields.io/badge/Demo-En%20Línea-blue?style=for-the-badge&logo=vercel)](https://tu-enlace-de-vercel.vercel.app)
+[![Estado](https://img.shields.io/badge/Status-Activo-success?style=for-the-badge)]()
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 💻 Acerca del Proyecto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este portafolio está concebido como un entorno de desarrollo interactivo que refleja mi día a día como programador. Más que una simple vitrina estática, está estructurado con una arquitectura modular en **React**, emulando un flujo de trabajo moderno y optimizado para la experiencia de usuario (UX).
 
-## Expanding the Oxlint configuration
+## 🛠️ Stack Tecnológico
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+* **Frontend:** React, JavaScript (ES6+), Tailwind CSS
+* **Herramientas de Build:** Vite
+* **Control de Versiones:** Git & GitHub
+* **Despliegue:** Vercel
+
+## ✨ Características Principales
+
+* **Arquitectura Modular:** Componentes altamente desacoplados y reutilizables (`PostCard`, `Profile`, `CallSidebar`, etc.).
+* **Diseño Responsivo Avanzado:** Adaptación fluida entre escritorio y dispositivos móviles mediante lógica de estado en React.
+* **Optimización de Rendimiento:** Estilos utilitarios y renderizado eficiente de interfaces.
+* **Enfoque en Ingeniería:** Registro documentado de resolución de problemas técnicos (manejo de asincronía y flujos de datos).
+
+
+# Clonar repositorio
+git clone [https://github.com/Yulian-001/portafolio-personal.git](https://github.com/Yulian-001/portafolio-personal.git)
+
+# Instalar dependencias
+pnpm install
+
+# Ejecución del servidor de desarrollo
+pnpm run dev
+
+# Contacto
+ Correo: yuliansoraca01@gmail.com
+ GitHub: @Yulian-001
+
+## 📂 Estructura del Proyecto
+
+```text
+src/
+├── components/     # Componentes modulares reutilizables
+├── data/           # Fuentes de datos y mocks estructurados
+├── assets/         # Recursos gráficos e iconos
+└── App.jsx         # Componente raíz y gestión de estado global
+
+
+``
