@@ -16,7 +16,8 @@ export default function App() {
     <main className=" bg-fondo ">
       <div className='flex flex-col justify-start  gap-6  md:flex-row-reverse  mx-6 lg:mx-16 py-6  '>
         <section>
-          <CallSidebar onOpen={() => setIsSidebarOpen(true)} />
+          <CallSidebar
+            onOpen={() => setIsSidebarOpen(true)}/>
         </section>
 
         <aside className={`
