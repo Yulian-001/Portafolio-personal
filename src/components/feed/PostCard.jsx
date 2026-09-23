@@ -6,7 +6,7 @@ export default function PostCard({ post }) {
 
 
     return (
-        <article className="flex flex-col w-full max-w-3xl mx-auto  pr-3 ml-12  p-2 my-3 bg-tarjet border border-white/80  rounded-2xl shadow-2xl text-white  transition-all duration-300l ">
+        <article className="flex flex-col w-full max-w-3xl mx-auto text-white/80 pr-3 ml-12  p-2 my-3 bg-tarjet border border-white/80  rounded-2xl shadow-2xl transition-all duration-300l ">
 
 
             <header className="flex items-center gap-3 pb-4 mx-3 " >
@@ -16,14 +16,14 @@ export default function PostCard({ post }) {
                     className="size-14 rounded-full object-cover ring-2 ring-purple-600/70"
                 />
                 <div className="flex flex-col">
-                    <h3 className="font-bold text-sm sm:text-base text-purple-100">{post.author.name}</h3>
+                    <h3 className="font-bold text-sm sm:text-base text-white/80">{post.author.name}</h3>
                     <span className="text-xs text-purple-300/70">{post.author.handle}</span>
                 </div>
                 <time className="ml-auto text-sm text-purple-200/70" dateTime={post.createdAt}> {post.createdAt}</time>
             </header>
 
             <section >
-                <p className=" text-xl sm:text-base ml-12 md:text-lg -translate-y-2 lg:ml-14 lg:-translate-y-6 pl-4   leading-tight md:font-thin text-white/85 " >{post.content}</p>
+                <p className=" text-xl sm:text-base ml-12 md:text-lg -translate-y-2 lg:ml-14 lg:-translate-y-6 pl-4   leading-tight md:font-thin text-white/90 " >{post.content}</p>
                 {post.media && post.media.length > 0 && (
                     <ul className="flex flex-wrap  justify-center  ml-4 md:ml-8   gap-2">
 
