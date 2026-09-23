@@ -44,16 +44,7 @@ export default function Profile({ prof }) {
                         <h3 className="mr-">+57 3144533840</h3>
                         
                         </div>
-                        <div className="my-2 animate-latir">
-                            <a
-                            title="Chat directo a WhatsApp"
-                            href="https://wa.me/573144533840?text=Hola%20estoy%20interesado%20en%20ti"
-                            rel="noopener noreferrer" 
-                            target="_blank"
-                            >
-                            <Whatsapp />
-                        </a >
-                        </div>
+                        
                     </div>
                 </div>
 
