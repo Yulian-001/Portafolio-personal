@@ -6,104 +6,96 @@
             "name": "Yulian Andrés Soracá",
             "lvl": "LVL 19"
         },
-        "main": {
-            "grafic": [
-                [
-                    {
-                        "subject": "FRONTEND",
-                        "actual": 85,
-                        "promedio": 65,
-                        "objetivo": 95
-                    },
-                    {
-                        "subject": "BACKEND",
-                        "actual": 65,
-                        "promedio": 60,
-                        "objetivo": 90
-                    },
-                    {
-                        "subject": "UI/UX",
-                        "actual": 70,
-                        "promedio": 55,
-                        "objetivo": 85
-                    },
-                    {
-                        "subject": "DATABASE",
-                        "actual": 75,
-                        "promedio": 65,
-                        "objetivo": 90
-                    },
-                    {
-                        "subject": "DevOps / Herramientas",
-                        "sublabel": "Capital",
-                        "actual": 90,
-                        "promedio": 60,
-                        "objetivo": 95
-                    }
-                ]
-            ],
-            "list": {
-                "blue": "Nivel actual",
-                "white": "Nivel promedio",
-                "green": "Nivel meta"
-            }
+        "grafic": [
+            [
+                {
+                    "subject": "FRONTEND",
+                    "actual": 85,
+                    "promedio": 65,
+                    "objetivo": 95
+                },
+                {
+                    "subject": "BACKEND",
+                    "actual": 65,
+                    "promedio": 60,
+                    "objetivo": 90
+                },
+                {
+                    "subject": "UI/UX",
+                    "actual": 70,
+                    "promedio": 55,
+                    "objetivo": 85
+                },
+                {
+                    "subject": "DATABASE",
+                    "actual": 75,
+                    "promedio": 65,
+                    "objetivo": 90
+                },
+                {
+                    "subject": "DevOps / Herramientas",
+                    "sublabel": "Capital",
+                    "actual": 90,
+                    "promedio": 60,
+                    "objetivo": 95
+                }
+            ]
+        ],
+        "list": {
+            "blue": "Nivel actual",
+            "white": "Nivel promedio",
+            "green": "Nivel objetivo"
         },
-        "footer": {
-            "CardSkill": {
-                "titleSkill": "HABILIDADES ACTIVAS",
-                "infoSkill": [
-                    {
-                        "logo": "img",
-                        "title": "React",
-                        "description": "Interfaz dinámica avanzada"
-                    },
-                    {
-                        "logo": "img2",
-                        "title": "SQL",
-                        "description": "Sentencias practicas"
-                    },
-                    {
-                        "logo": "img2",
-                        "title": "SQL",
-                        "description": "Sentencias practicas"
-                    }
-                ]
-            },
-            "passiveSkill": {
-                "titleSkill": "HABILIDADES PASIVAS",
-                "infoSkill": [
-                    {
-                        "logo": "img",
-                        "title": "Aprendizaje Autodidactica",
-                        "description": "Interfaz dinámica avanzada"
-                    },
-                    {
-                        "logo": "img2",
-                        "title": "SQL",
-                        "description": "Arquitecturas"
-                    },
-                    {
-                        "logo": "img2",
-                        "title": "SQL",
-                        "description": "Manejo de metodologías"
-                    }
-                ]
-            },
-            "inventaryTools": {
-                "title": "Inventario de Herramientas",
-                "tools": [
-                    {
-                        "img": "img",
-                        "title": "GitHub",
-                        "nivel": "Intermedio"
-                    },
-                    {
-                        "img": "img",
-                        "title": "Más",
-                        "nivel": "Aprendiendo sobre el uso activo de herramientas que me complementan"
-                    }
-                ]
-            }
+
+        "CardSkill": {
+            "titleSkill": "HABILIDADES ACTIVAS",
+            "infoSkill": [
+                {
+                    "logo": "/LogoReact.png",
+                    "title": "React",
+                    "description": "Interfaz dinámica avanzada"
+                },
+                {
+                    "logo": "/LogoPostgres.png",
+                    "title": "PostgresSQL",
+                    "description": "Sentencias practicas"
+                },
+                {
+                    "logo": "/LogoJs.png",
+                    "title": "JavaScript",
+                    "description": "Sentencias practicas"
+                }
+            ]
+        },
+        "passiveSkill": {
+            "titleSkill": "HABILIDADES PASIVAS",
+            "infoSkill": [
+                {
+                    "logo": "/autodidacta.png",
+                    "title": "Aprendizaje Autodidactica",
+                    "description": "Interfaz dinámica avanzada"
+                },
+                {
+                    "logo": "/arquitectura.png",
+                    "title": "Arquitecto Software",
+                    "description": "Arquitecturas bien desarrolladas"
+                }
+            ]
+        },
+        "inventaryTools": {
+            "title": "Inventario de Herramientas",
+            "tools": [
+                {
+                    "logo": "/LogoGithub.png",
+                    "title": "GitHub",
+                    "description": "Intermedio"
+                },
+                {
+                    "logo": "img",
+                    "title": "Docker",
+                    "description": "Básico"
+                }
+            ]
         }
     }
 ]
