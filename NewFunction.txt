@@ -1,0 +1,6 @@
+Se realizará una tarjeta de habilidades que nos permitira ver como unas estadisticas a las que estoy orientado, como desarrollador full stack, donde se plasmará el nivel actual segun conocimientos y habilidades mediante un gráfico de araña (pentagono)
+
+
+Movile: en dispositivos moviles este se comportara como un tarjeta super puesta en la mitad de la pantalla al hacer clic en un boton alojado en el perfil
+
+Pantallas grandes: es dispositvos o pantallas grander mayor a 758px en adelante se realizara un animacion de espejo el cual al hacer clic en el boton la tarjeta aparecera rotando el perfil 175° para completar media rotacion haciendo ver la rotacion sobre el mismo eje central, y al cerrar la tarjeta para ver el perfil se seleccionará el boton de cerrar esta girará nuevamente sobre su eje 175°
