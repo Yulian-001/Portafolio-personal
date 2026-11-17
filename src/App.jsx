@@ -30,7 +30,7 @@ export default function App() {
 
 
             <aside className={`
-                    fixed inset-y-0 right-0 z-50 w-[25rem]  bg-fondo p-4 shadow-2xl overflow-y-auto
+                    fixed inset-y-0 right-0 z-50 w-[25rem]  bg-fondo p-4 shadow-2xl 
                     transform transition-transform duration-300 ease-in-out
                     ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full '}
                     md:translate-x-0 md:static md:w-auto
