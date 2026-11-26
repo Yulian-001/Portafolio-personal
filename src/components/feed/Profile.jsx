@@ -1,119 +1,89 @@
-import { useState } from "react";
-import { Location, Phone, Emails, Options, Whatsapp } from "./ProfileIcons";
-import TerminalConsole from "./TerminalConsole.jsx"
+import { useId, useLayoutEffect, useRef, useState } from "react";
+import { LuRotateCcw, LuZap } from "react-icons/lu";
+import { Location, Phone, Emails, Options } from "./ProfileIcons";
+import TerminalConsole from "./TerminalConsole.jsx";
+import CardSkill from "./CardSkill";
+import ProfileStudies from "./ProfileStudies";
 
-export default function Profile({ prof }) {
-    if (!prof) return null;
+const skillButtonStyle = `
+    relative isolate inline-grid shrink-0 cursor-pointer place-items-center rounded-full
+    border border-[#eeba54] bg-[radial-gradient(circle_at_38%_26%,#524016,#261436_65%)] text-[#ffe99d]
+    shadow-[0_0_9px_#e6a52e66,inset_0_0_8px_#eebc3a42]
+    hover:shadow-[0_0_19px_#fabe4fbb,inset_0_0_11px_#edc25878]
+    focus-visible:outline-2 focus-visible:outline-offset-5 focus-visible:outline-[#ffde7e]
+    before:pointer-events-none before:absolute before:-inset-1 before:rounded-full before:border-2
+    before:border-[#ba812a] before:border-t-[#fff0ad] before:border-r-[#ffc653] before:border-b-transparent
+    motion-safe:before:animate-[spin_5s_linear_infinite]
+    [&>svg]:size-[22px] [&>svg]:drop-shadow-[0_0_5px_#f1a92b]
+`;
 
-    const [ selectStudie, setSelectStudie] = useState(null)
+export default function Profile({ prof, skills }) {
+    const [showSkills, setShowSkills] = useState(false);
+    const id = useId();
+    const skillButton = useRef(null);
+    const returnButton = useRef(null);
+    const moveFocus = useRef(false);
+    const emailLink = `mailto:${prof.gmail}`;
+    const phoneLink = `tel:${prof.phone.replace(/[^+\d]/g, "")}`;
+
+    useLayoutEffect(() => {
+        if (!moveFocus.current) return;
+        (showSkills ? returnButton : skillButton).current?.focus({ preventScroll: true });
+        moveFocus.current = false;
+    }, [showSkills]);
+
+    function flipProfile() {
+        moveFocus.current = true;
+        setShowSkills((visible) => !visible);
+    }
 
     return (
-        <article
-        className={`w-full max-w-4xl mx-auto p-4 sm:p-6 my-2  bg-tarjet border border-white/80 rounded-2xl     text-white transition-all duration-300`}>
-
-            <div className="border  border-white/60 -mx-4 md:-mx-5 lg:-mx-6   md:mt-8 translate-y-20    "></div>
-            <header className="flex justify-between items-center mt-12  mb-6">
-                <img
-                    src={prof.avatar}
-                    alt="Logo sena"
-                    className="-ml-8 lg:ml-8 size-14  lg:size-20 purple-600/70 p-1  rounded-full ring-2 ring-white translate-x-8 "
-                />
-                <div className="flex  items-center  gap-4 mt-8 lg:mt-8">
-                    <h6 className="px-3 py-0.5  text-xs font-medium lg:font-bold lg:text-lg  text-white/90 bg-mist-700/60  rounded-full border  ">Seguir</h6>
-
-                    <Options />
-
-                </div>
-            </header>
-
-            <section>
-                <div>
-                    <h2 className="font-bold text-xl my-2">{prof.name}</h2>
-                    <p className="text-md lg:text-lg leading-normal mb-4">{prof.description} </p>
-                    <div className=" flex flex-col lg:flex-row  text-sm items-start lg:items-center  md:gap-2  mb-4">
-                        <div className="flex flex-row items-center">
-                            <Location />
-                            <h4 className="mr-4 ml-2 md:mr-6 ">{prof.location} </h4>
-                        </div>
-                        <div className="flex flex-row items-center">
-                            <Emails />
-                            <h4 className="mr-4 ml-2 md:mr-6 ">{prof.gmail} </h4>
-                        </div>
-                        <div className="flex flex-row items-center gap-2">
-                        <Phone />
-                        <h3 className="mr-">+57 3144533840</h3>
-                        
-                        </div>
-                        
-                    </div>
-                </div>
-
-                <div className="flex flex-row gap-4 items-center flex-wrap">
-                    <h4 className="font-medium md:text-lg md:font-bold ">Estudios |</h4>
-
-
-
-                    {prof.studies.map(({ src, alt, info, spinnerColor, title }, index) => {
-                        const isActive = selectStudie === index;
-
-                        return (
-
-                            <div
-                                onClick={() => setSelectStudie(isActive ? null : index)}
-                                className="relative group size-12 lg:size-18 rounded-full "
-
-                                key={index}>
-                                {isActive && (
-                                    <div className="fixed inset-0 z-20 md:hidden bg-transparent"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            setSelectStudie(null);
-                                        }}
-                                    />
-                                )}
-
-                                <div className={`
-                                        absolute lg:w-md md:translate-y-22 px-4 py-6 bg-black/95 border border-white/20 text-white text-xs md:text-lg rounded-xl shadow-xl transition-all duration-300 z-30
-                                        /* Comportamiento Móvil: Controlado por JS */
-                                        w-[280px] -translate-x-1/2 left-1/2 mt-14 
-                                        ${isActive
-                                        ? 'opacity-100 pointer-events-auto '
-                                        : 'hidden lg:block md:opacity-0 md:pointer-events-none'}
-                                        /* Comportamiento Desktop: Sigue funcionando con Hover */
-                                        md:left-auto xl:-translate-x-3 md:-translate-x-49 md:mt-0 md:group-hover:opacity-100 md:pointer-events-none
-                                    `}>
-                                    <h3 className=" text-xl flex justify-center pb-3 font-bold">{title} </h3>
-                                    <p >{info} </p>
-
+        <div className="profile-flip">
+            <div className={`profile-rotor ${showSkills ? "is-flipped" : ""}`}>
+                <div className="profile-face" inert={showSkills}>
+                    <article id={`${id}-profile`} className="rounded-2xl border border-white/50 bg-tarjet text-white">
+                        <header className="relative px-4 pt-9 pb-4 sm:px-6">
+                            <div aria-hidden="true" className="absolute inset-x-0 top-0 h-16 rounded-t-2xl border-b border-white/30 bg-linear-to-r from-nav via-purple-950 to-fondo" />
+                            <div className="relative mb-4 flex flex-wrap items-end gap-2.5 sm:gap-4">
+                                <img src={prof.avatar} alt="" className="size-16 rounded-full object-cover ring-2 ring-white sm:size-20" />
+                                <div className="ml-auto flex items-center gap-2">
+                                    <button ref={skillButton} type="button" aria-expanded={showSkills}
+                                        className={`${skillButtonStyle} size-12 after:pointer-events-none after:absolute after:-inset-1 after:rounded-full after:border after:border-amber-200 after:opacity-0 after:shadow-[0_0_18px_5px_#ffc95b] motion-safe:after:animate-skill-glow`}
+                                        aria-controls={id} aria-label={skills.controls.show} title={skills.controls.show}
+                                        onClick={flipProfile}>
+                                        <LuZap aria-hidden="true" />
+                                    </button>
+                                    {prof.github && (
+                                        <a className="profile-follow" href={prof.github} aria-label="Seguir en GitHub">Seguir</a>
+                                    )}
+                                    <Options emailLink={emailLink} phoneLink={phoneLink} />
                                 </div>
-
-                                <svg className="absolute -inset-1 size-[calc(100%+8px)] animate-spin"
-                                    viewBox="0 0 100 100"
-                                >
-                                    <circle
-                                        cx="50"
-                                        cy="50"
-                                        r="44"
-                                        fill="none"
-                                        strokeWidth="6"
-                                        strokeLinecap="round"
-                                        className={spinnerColor}
-                                        strokeDasharray="120 10 120"
-                                    ></circle>
-                                </svg>
-                                <img
-                                    className={`rounded-full size-full object-cover relative z-10 animate-pulse `}
-                                    src={src}
-                                    alt={alt} />
                             </div>
-                        )
-                    })}
+                            {prof.welcome && <p className="mb-1 text-sm font-semibold text-purple-200">{prof.welcome}</p>}
+                            <h2 className="text-xl font-bold sm:text-2xl">{prof.name}</h2>
+                        </header>
+                        <section className="space-y-5 px-4 pb-6 sm:px-6">
+                            <p className="leading-relaxed text-white/90 sm:text-lg">{prof.description}</p>
+                            <ul className="space-y-2 text-base text-white/85">
+                                <li className="flex items-center gap-2"><Location /> {prof.location}</li>
+                                <li className="flex items-center gap-2"><Emails /> <a className="break-all hover:underline" href={emailLink}>{prof.gmail}</a></li>
+                                <li className="flex items-center gap-2"><Phone /> <a className="hover:underline" href={phoneLink}>{prof.phone.trim()}</a></li>
+                            </ul>
+                            <ProfileStudies studies={prof.studies} />
+                            <TerminalConsole prof={prof.terminalLogs} />
+                        </section>
+                    </article>
                 </div>
-
-                <div className="flex  justify-center mt-12 ">
-                    <TerminalConsole prof={prof.terminalLogs} />
+                <div id={id} className="profile-face profile-face-back" inert={!showSkills}>
+                    <CardSkill skills={skills} name={prof.name} returnControl={
+                        <button ref={returnButton} type="button" className={`${skillButtonStyle} ms-auto size-11`}
+                            aria-controls={`${id}-profile`} aria-label={skills.controls.hide} title={skills.controls.hide}
+                            onClick={flipProfile}>
+                            <LuRotateCcw aria-hidden="true" />
+                        </button>
+                    } />
                 </div>
-            </section>
-        </article>
-    )
+            </div>
+        </div>
+    );
 }

@@ -1,101 +1,134 @@
-[
+{
+  "controls": {
+    "show": "Ver habilidades",
+    "hide": "Volver al perfil"
+  },
+  "heading": "Habilidades y afinidades",
+  "radar": {
+    "title": "Mapa de afinidades",
+    "description": "Una vista personal de lo que más disfruto, lo que practico y lo que quiero explorar.",
+    "axes": [
+      {
+        "id": "frontend",
+        "label": "Frontend",
+        "afinidad": 85,
+        "practica": 65,
+        "interes": 95
+      },
+      {
+        "id": "backend",
+        "label": "Backend",
+        "afinidad": 65,
+        "practica": 60,
+        "interes": 90
+      },
+      {
+        "id": "ux",
+        "label": "UI/UX",
+        "afinidad": 70,
+        "practica": 55,
+        "interes": 85
+      },
+      {
+        "id": "database",
+        "label": "Bases de datos",
+        "afinidad": 75,
+        "practica": 65,
+        "interes": 90
+      },
+      {
+        "id": "devops",
+        "label": "DevOps",
+        "afinidad": 90,
+        "practica": 60,
+        "interes": 95
+      }
+    ],
+    "series": [
+      {
+        "id": "interes",
+        "label": "Interés por explorar",
+        "color": "#ffe379"
+      },
+      {
+        "id": "practica",
+        "label": "Práctica habitual",
+        "color": "#edddff"
+      },
+      {
+        "id": "afinidad",
+        "label": "Afinidad personal",
+        "color": "#5cf5f0"
+      }
+    ]
+  },
+  "sections": [
     {
-        "header": {
-            "logo": "img",
-            "title": "TARJETA DE ESTADÍSTICAS",
-            "name": "Yulian Andrés Soracá",
-            "lvl": "LVL 19"
+      "id": "technical",
+      "title": "Habilidades técnicas",
+      "items": [
+        {
+          "id": "react",
+          "title": "React",
+          "description": "Interfaces interactivas y componentes reutilizables.",
+          "logo": "/LogoReact.png"
         },
-        "grafic": [
-            [
-                {
-                    "subject": "FRONTEND",
-                    "actual": 85,
-                    "promedio": 65,
-                    "objetivo": 95
-                },
-                {
-                    "subject": "BACKEND",
-                    "actual": 65,
-                    "promedio": 60,
-                    "objetivo": 90
-                },
-                {
-                    "subject": "UI/UX",
-                    "actual": 70,
-                    "promedio": 55,
-                    "objetivo": 85
-                },
-                {
-                    "subject": "DATABASE",
-                    "actual": 75,
-                    "promedio": 65,
-                    "objetivo": 90
-                },
-                {
-                    "subject": "DevOps / Herramientas",
-                    "sublabel": "Capital",
-                    "actual": 90,
-                    "promedio": 60,
-                    "objetivo": 95
-                }
-            ]
-        ],
-        "list": {
-            "blue": "Nivel actual",
-            "white": "Nivel promedio",
-            "green": "Nivel objetivo"
+        {
+          "id": "postgres",
+          "title": "PostgreSQL",
+          "description": "Consultas y modelado de datos relacionales.",
+          "logo": "/LogoPostgres.png"
         },
-
-        "CardSkill": {
-            "titleSkill": "HABILIDADES ACTIVAS",
-            "infoSkill": [
-                {
-                    "logo": "/LogoReact.png",
-                    "title": "React",
-                    "description": "Interfaz dinámica avanzada"
-                },
-                {
-                    "logo": "/LogoPostgres.png",
-                    "title": "PostgresSQL",
-                    "description": "Sentencias practicas"
-                },
-                {
-                    "logo": "/LogoJs.png",
-                    "title": "JavaScript",
-                    "description": "Sentencias practicas"
-                }
-            ]
-        },
-        "passiveSkill": {
-            "titleSkill": "HABILIDADES PASIVAS",
-            "infoSkill": [
-                {
-                    "logo": "/autodidacta.png",
-                    "title": "Aprendizaje Autodidactica",
-                    "description": "Interfaz dinámica avanzada"
-                },
-                {
-                    "logo": "/arquitectura.png",
-                    "title": "Arquitecto Software",
-                    "description": "Arquitecturas bien desarrolladas"
-                }
-            ]
-        },
-        "inventaryTools": {
-            "title": "Inventario de Herramientas",
-            "tools": [
-                {
-                    "logo": "/LogoGithub.png",
-                    "title": "GitHub",
-                    "description": "Intermedio"
-                },
-                {
-                    "logo": "img",
-                    "title": "Docker",
-                    "description": "Básico"
-                }
-            ]
+        {
+          "id": "js",
+          "title": "JavaScript",
+          "description": "Interactividad, lógica de interfaz y asincronía.",
+          "logo": "/LogoJs.png"
         }
+      ]
+    },
+    {
+      "id": "approach",
+      "title": "Forma de trabajo",
+      "items": [
+        {
+          "id": "learn",
+          "title": "Aprendizaje autodidacta",
+          "description": "Exploración y práctica con proyectos propios.",
+          "logo": "/autodidacta.png"
+        },
+        {
+          "id": "architecture",
+          "title": "Arquitectura modular",
+          "description": "Organización del código en componentes reutilizables.",
+          "logo": "/arquitectura.png"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Stack de herramientas",
+      "wide": true,
+      "items": [
+        {
+          "id": "github",
+          "title": "GitHub",
+          "description": "Control de versiones y colaboración.",
+          "logo": "/LogoGithub.png"
+        },
+        {
+          "id": "docker",
+          "title": "Docker",
+          "description": "Exploración de entornos reproducibles.",
+          "logo":"/LogoDocker.png"
+        },
+        {
+          "id": "tailwind",
+          "title": "Tailwind CSS",
+          "description": "Estilos responsivos y composición visual.",
+          "logo": "/LogoTailwind.png"
+        }
+      ]
     }
-]
+  ]
+}

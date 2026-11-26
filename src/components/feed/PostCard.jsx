@@ -1,123 +1,82 @@
-import PostIcons from "./PostIcons"
+import { useId } from "react";
+import MobileLoopRow from "./MobileLoopRow";
+import PostIcons from "./PostIcons";
+
+const hoverColors = ["stroke-yellow-400", "stroke-cyan-400", "stroke-sky-400", "stroke-purple-400", "stroke-orange-400", "stroke-blue-400"];
+
+function Logo({ item, index = 0 }) {
+    const gradientId = useId();
+    const rainbow = item.accent === "rainbow";
+
+    return (
+        <span className="group/logo relative grid size-24 place-items-center rounded-2xl p-2 sm:size-28 md:size-32 md:motion-safe:hover:animate-bounce">
+            <svg aria-hidden="true" viewBox="0 0 100 100"
+                className={`pointer-events-none absolute -inset-1 size-[calc(100%+8px)] transition-opacity ${rainbow ? "opacity-100" : "hidden opacity-0 md:block md:group-hover/logo:opacity-100"}`}>
+                {rainbow && (
+                    <defs><linearGradient id={gradientId}>
+                        <stop offset="0%" stopColor="#ff526a" /><stop offset="25%" stopColor="#ffcf52" />
+                        <stop offset="38%" stopColor="#f9f871" /><stop offset="55%" stopColor="#5ef5a4" />
+                        <stop offset="72%" stopColor="#4ed8ff" /><stop offset="86%" stopColor="#9c76ff" />
+                        <stop offset="100%" stopColor="#e275ff" />
+                    </linearGradient></defs>
+                )}
+                <rect x="4" y="4" width="92" height="92" rx="16" fill="none" strokeWidth="3" strokeDasharray="75 15"
+                    stroke={rainbow ? `url(#${gradientId})` : undefined}
+                    className={`${rainbow ? "" : hoverColors[index % hoverColors.length]} motion-safe:group-hover/logo:animate-logo-travel`} />
+            </svg>
+            <img src={item.icon} alt={item.name} loading="lazy" className="relative size-full rounded-2xl object-contain" />
+        </span>
+    );
+}
 
 export default function PostCard({ post }) {
     if (!post) return null;
 
-
+    const media = post.media ?? [];
+    const rowCount = Math.min(3, media.length);
+    const rows = Array.from({ length: rowCount }, (_, index) =>
+        media.slice(Math.ceil(index * media.length / rowCount), Math.ceil((index + 1) * media.length / rowCount)));
 
     return (
-        <article className="flex flex-col w-full max-w-3xl mx-auto text-white/80 pr-3 ml-12  p-2 my-3 bg-tarjet border border-white/80  rounded-2xl shadow-2xl transition-all duration-300l ">
-
-
-            <header className="flex items-center gap-3 pb-4 mx-3 " >
-                <img
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    className="size-14 rounded-full object-cover ring-2 ring-purple-600/70"
-                />
+        <article id={post.id} className="mx-auto mb-4 flex w-full max-w-3xl scroll-mt-20 flex-col rounded-2xl border border-white/60 bg-tarjet p-4 text-white/80 shadow-xl sm:p-5">
+            <header className="flex flex-wrap items-center gap-3 pb-4">
+                <img src={post.author.avatar} alt="" className="size-12 shrink-0 rounded-full object-cover ring-2 ring-purple-600/70" />
                 <div className="flex flex-col">
-                    <h3 className="font-bold text-sm sm:text-base text-white/80">{post.author.name}</h3>
-                    <span className="text-xs text-purple-300/70">{post.author.handle}</span>
+                    <h3 className="text-sm font-bold text-white/90 sm:text-base">{post.author.name}</h3>
+                    {post.author.handle && <span className="text-xs text-purple-300/80">{post.author.handle}</span>}
                 </div>
-                <time className="ml-auto text-sm text-purple-200/70" dateTime={post.createdAt}> {post.createdAt}</time>
+                <span className="ml-auto text-sm text-purple-200/80">{post.createdAt}</span>
             </header>
-
-            <section >
-                <p className=" text-xl sm:text-base ml-12 md:text-lg -translate-y-2 lg:ml-14 lg:-translate-y-6 pl-4   leading-tight md:font-thin text-white/90 " >{post.content}</p>
-                {post.media && post.media.length > 0 && (
-                    <ul className="flex flex-wrap  justify-center  ml-4 md:ml-8   gap-2">
-
-                        <style>{`
-                        @keyframes travelStroke {
-                            from { stroke-dashoffset: 392 ; }
-                            to { stroke-dashoffset: 10; }
-                        }
-                        .animate-travel {
-                            animation: travelStroke 2s linear infinite;
-                        }
-                        `}</style>
-
-                        {post.media.map((item, index) => {
-                            const spinnerColors = [
-                                "stroke-yellow-400",
-                                "stroke-cyan-400",
-                                "stroke-green-600",
-                                "stroke-purple-400",
-                                "stroke-orange-400",
-                                "stroke-blue-900",
-                                "stroke-white",
-                                "stroke-green-900",
-                                "stroke-white"
-                            ];
-                            const assignedColor = spinnerColors[index % spinnerColors.length];
-                            const isLastItem = index === post.media.length - 1;
-                            return (
-                                <li key={item.id} className="relative group cursor-pointer p-2 size-22   sm:-p-2 md:size-32 m-1  hover:animate-bounce ease-in-out " >
-
-                                    <svg className={`absolute  -inset-1.5 size-[calc(100%+12px)]   opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
-                                        viewBox="0 0 100 100"
-                                    >
-                                        {isLastItem && (
-                                            <defs>
-                                                <linearGradient id="rainbow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                    <stop offset="0%" stopColor="#ff4b4b" />   {/* Rojo */}
-                                                    <stop offset="20%" stopColor="#ff9f43" />  {/* Naranja */}
-                                                    <stop offset="40%" stopColor="#feca57" />  {/* Amarillo */}
-                                                    <stop offset="60%" stopColor="#1dd1a1" />  {/* Verde */}
-                                                    <stop offset="80%" stopColor="#54a0ff" />  {/* Azul */}
-                                                    <stop offset="100%" stopColor="#5f27cd" /> {/* Morado */}
-                                                </linearGradient>
-                                            </defs>
-                                        )}
-                                        <rect
-                                            x="5"
-                                            y="5"
-                                            width="90"
-                                            height="90"
-                                            rx="18"
-                                            fill="none"
-                                            strokeWidth="4"
-                                            strokeLinecap="round"
-                                            stroke="url(#rainbow-gradient)"
-                                            className={`${!isLastItem ? assignedColor : ""} animate-travel`}
-                                            strokeDasharray="80 10"
-                                        />
-                                    </svg>
-
-                                    <img
-                                        src={item.icon}
-                                        alt={item.name}
-                                        className="  size-full object-contain  rounded-3xl relative z-10 "
-                                    />
-                                </li>
-                            );
-                        })}
-                    </ul>
+            <section>
+                <p className="whitespace-pre-wrap text-base leading-relaxed text-white/90 [overflow-wrap:anywhere]">{post.content}</p>
+                {rows.length > 0 && (
+                    <>
+                        <ul className="mt-3 hidden flex-wrap justify-center gap-3 md:flex">
+                            {media.map((item, index) => <li key={item.id}><Logo item={item} index={index} /></li>)}
+                        </ul>
+                        <div className="mt-3 md:hidden">
+                            {rows.map((row, index) => (
+                                <MobileLoopRow key={row[0].id} items={row} renderItem={(item) => <Logo item={item} />}
+                                    direction={index % 2 === 0 ? "right" : "left"} />
+                            ))}
+                        </div>
+                    </>
                 )}
-                {post.projects && post.projects.length > 0 && (
-                    <ul className="space-y-3 pt-2 ml-13" >
-                        {post.projects.map((item) => (
-                            <li key={item.id} className="p-3">
-                                <ol>
-                                    <h4 className="pb-3 text-xl font-medium" >{item.name}</h4>
-                                    <p className="mb-3 text-lg">{item.description}</p>
-                                    <a className="mx-3 font-mono text-xl text-blue-600 hover:text-purple-300 underline"
-                                        href={item.githubUrl}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        Ver Github
-                                    </a>
-                                </ol>
+                {!!post.projects?.length && (
+                    <ul className="space-y-3 pt-2">
+                        {post.projects.map(({ id, name, description, githubUrl }) => (
+                            <li key={id} className="p-3">
+                                <h4 className="pb-3 text-xl font-medium">{name}</h4>
+                                <p className="mb-3 text-lg">{description}</p>
+                                <a href={githubUrl} target="_blank" rel="noreferrer" className="inline-flex rounded-lg bg-blue-100 px-3 py-1.5 font-semibold text-blue-950 hover:bg-blue-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-200">
+                                    Ver GitHub
+                                </a>
                             </li>
                         ))}
                     </ul>
                 )}
             </section>
-
-            <PostIcons metrics={post.metrics} />
+            <PostIcons postId={post.id} metrics={post.metrics} />
         </article>
-    )
+    );
 }
-
-

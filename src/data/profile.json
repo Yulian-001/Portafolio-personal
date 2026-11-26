@@ -1,12 +1,15 @@
 [
     {
         "id": "profile-1",
-        "avatar": "/FotoLuffy.png",
+        "avatar": "/MiFoto.png",
         "name": "Yulian Andrés Soracá Castañeda",
+        "welcome": "Bienvenido a mi espacio de desarrollo",
         "description": "Desarrollador Frontend y Explorador Tecnológico. Programador de código limpio. Construyendo UIs dinamicas con React/vite 🌐  Próximo camino: Backends Robustos. 💻 Estudiante de Análisis y Desarrollo de Software | Futuro Ingeniero de Software 🎓",
         "location": "De Colombia",
         "gmail": "soracayulian@gmail.com",
+        "github": "https://github.com/Yulian-001",
         "phone": " +57 3144533840",
+        "whatsappMessage": "¡Hola! Vi tu portafolio y me gustaría recibir más información sobre tus servicios.",
         "studies": [
             {
                 "src": "/LogoSena.png",

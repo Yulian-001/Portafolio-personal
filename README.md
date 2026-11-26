@@ -24,6 +24,13 @@ Este portafolio está concebido como un entorno de desarrollo interactivo que re
 * **Diseño Responsivo Avanzado:** Adaptación fluida entre escritorio y dispositivos móviles mediante lógica de estado en React.
 * **Optimización de Rendimiento:** Estilos utilitarios y renderizado eficiente de interfaces.
 * **Enfoque en Ingeniería:** Registro documentado de resolución de problemas técnicos (manejo de asincronía y flujos de datos).
+* **Perfil de dos caras:** El botón «Ver habilidades» gira el perfil y muestra un mapa de afinidades, habilidades y herramientas.
+
+### Editar el perfil de habilidades
+
+Edita `src/data/profile.json` para actualizar el nombre y los datos de perfil. En `src/data/skill.json`, añade elementos a `sections[].items` para ampliar una tarjeta o añade una entrada a `sections` para crear otra. Cada entrada necesita un `id` único dentro de su lista. El campo opcional `logo` apunta a un archivo de `public/` con una ruta como `/LogoReact.png`. Usa `wide: true` para que una tarjeta ocupe todo el ancho.
+
+En `radar.axes` puedes editar o añadir ejes. Cada eje tiene un `id`, una etiqueta `label` y un valor entre 0 y 100 por cada serie. Para añadir una serie, define su `id`, `label` y `color` en `radar.series` y usa ese mismo `id` como clave en cada eje. Los valores representan afinidades personales y se muestran mediante la forma de la gráfica.
 
 
 # Clonar repositorio

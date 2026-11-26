@@ -2,11 +2,11 @@
     {
         "id": "post-1",
         "author": {
-            "name": "Yulian {~_~}",            
-            "avatar": "/FotoLuffy.png"
+            "name": "Dev Yulian Andrés",            
+            "avatar": "/MiFoto.png"
     },
         "createdAt": "Hace 2 horas",
-        "content": "Bienvenido a mi entorno de desarrollo este es el reflejo de mi día a día como desarrollador: un puente directo entre el diseño de experiencias y la arquitectura del código. Te invito a explorar los proyectos donde materializo ideas, transforma problemas  en componentes interactivos, modulares y listos para producción",
+        "content": "Este es mi entorno de creación: código con propósito y curiosidad técnica sin filtros. Diseño UIs modulares y sistemas orientados al rendimiento, disfrutando el proceso de entender cómo funciona cada capa del software. Te invito a explorar lo que he construido.",
         "media": [],
         "projects":[],
         "metrics":{
@@ -20,8 +20,8 @@
     {
         "id": "post-2",
         "author": {
-            "name": "Yulian {~_~}",            
-            "avatar": "/FotoLuffy.png"
+            "name": "Dev Yulian Andrés",            
+            "avatar": "/MiFoto.png"
     },
         "createdAt": "Hace 1 día",
         "content": "Evolucionando constantemente de forma independiente. Persigo la excelencia técnica para estructurar arquitecturas de software complejas. Aspiro a diseñar sistemas robustos y eficientes en entornos corporativos. Busco sumarme a un equipo donde pueda diseñar bases sólidas, potenciar el trabajo colaborativo y aportar soluciones listas para escalar desde el primer día.",
@@ -36,11 +36,11 @@
         {
         "id": "post-3",
         "author": {
-            "name": "Yulian {~_~}",            
-            "avatar": "/FotoLuffy.png"
+            "name": "Dev Yulian Andrés",            
+            "avatar": "/MiFoto.png"
     },
         "createdAt": "Hace 1 día",
-        "content": "Manejando el ecosistema interactivo con JavaScript y React para crear interfaces modulares, eficientes y estilizadas. ¿El siguiente paso lógico? Mientras lees esto, ya estoy explorando el lado del servidor y las bases de datos para dominar el ciclo completo del desarrollo.",
+        "content": "Manejando el ecosistema interactivo con JavaScript y React para crear interfaces modulares, eficientes y estilizadas. ¿El siguiente paso? Mientras lees esto, ya estoy explorando el lado del servidor y las bases de datos para dominar el ciclo completo del desarrollo.",
         "media": [
             {"id": "m-1", "name": "JavaScript", "icon": "/LogoJs.png"},
             {"id": "m-2", "name": "React", "icon": "/LogoReact.png"},
@@ -50,7 +50,7 @@
             {"id": "m-6", "name": "PostgreSQL", "icon": "/LogoPostgres.png"},
             {"id": "m-7", "name": "Github", "icon": "/LogoGithub.png"},
             {"id": "m-8", "name": "MySQL", "icon": "/LogoMysql.png"},
-            {"id": "m-9", "name": "Próximo", "icon": "/LogoInterrogante.png"}
+            {"id": "m-9", "name": "Próxima habilidad", "icon": "/LogoInterrogante.png", "accent": "rainbow"}
 
         ],
         "metrics":{
@@ -65,8 +65,8 @@
     {
         "id": "post-4",
         "author": {
-            "name": "Yulian {~_~}",            
-            "avatar": "/FotoLuffy.png"
+            "name": "Dev Yulian Andrés",            
+            "avatar": "/MiFoto.png"
     },
         "createdAt": "Hace 2 días",
         "content": "Mi portafolio es mi mejor carta de presentación. Proyectos construidos desde cero siendo producto del autoaprendizaje riguroso, diseñados no solo para funcionar, sino para escalar en complejidad lógica y estructura con cada nueva línea de código.",
@@ -79,12 +79,12 @@
         },
             {"id": "p-2", 
             "name": "Hitos de Autos Deportivos",
-            "description": "Página web interactiva que expone los mejores super autos deportivos desde sus clásicos hasta los más recientes en el mundo automovilistico deportivo.",
+            "description": "Una experiencia interactiva que recorre la evolución de la ingeniería y el diseño automotriz, desde los modelos clásicos hasta la innovación contemporánea. Explora el repositorio para ver cómo se estructuró la interfaz y la gestión de datos.",
             "githubUrl":"https://github.com/Yulian-001/Hitos-de-autos-deportivos-e-hiperdeportivos.git"
         },
             {"id": "p-3", 
             "name": "Calculadora de CDT",
-            "description": "Esta es una página web que funciona como calculadora de CDT para saber cuanta ganancia tendrá al ubicar mi dinero bajo una actividad bancaria que nos ofrecen.",
+            "description": "Simulación financiera en tiempo real. Una herramienta interactiva diseñada para proyectar la rentabilidad de un CDT, facilitando la comparativa de rendimientos frente a las distintas alternativas del sector bancario. ¿Quieres ver cómo se estructuró la lógica de cálculo? Explora el repositorio.",
             "githubUrl":"https://github.com/Yulian-001/Calcule-CDT.git"
         }
         ],

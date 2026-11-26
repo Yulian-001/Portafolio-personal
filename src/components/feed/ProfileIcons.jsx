@@ -6,15 +6,17 @@ import { MdWhatsapp } from "react-icons/md";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 
 
-export function Options() {
+export function Options({ emailLink, phoneLink }) {
     return (
-        <div>
-            <button>
-                <FiMoreHorizontal className="bg-mist-700/60 p-1 mt-1  size-5 lg:size-8 rounded-full border" />
-                <span className="text-xs font-medium">
-                </span>
-            </button>
-        </div>
+        <details className="profile-options">
+            <summary className="profile-option-trigger" aria-label="Opciones de perfil">
+                <FiMoreHorizontal aria-hidden="true" />
+            </summary>
+            <div className="profile-options-panel">
+                <a href={emailLink}>Enviar correo</a>
+                <a href={phoneLink}>Llamar</a>
+            </div>
+        </details>
     )
 }
 
@@ -55,15 +57,7 @@ export function Phone() {
 }
 
 export function Whatsapp() {
-    return (
-        <section>
-            <div>
-                <button>
-                    <MdWhatsapp className="size-10 lg:size-12  text-white bg-consoleGreen  rounded-full " />
-                </button>
-            </div>
-        </section>
-    )
+    return <MdWhatsapp aria-hidden="true" className="size-6" />;
 }
 export function ArrowSidebar() {
     return (

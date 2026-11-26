@@ -1,72 +1,46 @@
-import posts from './data/posts.json';
-import PostCard from './components/feed/PostCard';
-import Profile from './components/feed/Profile';
-import profile from './data/profile.json';
-import CallSidebar from './components/feed/CallSidebar';
-import { useState } from 'react';
-import { ArrowSidebar } from './components/feed/ProfileIcons';
-import skillData from './data/skill.json';
-import CardSkill from './components/feed/CardSkill';
+import { useEffect, useRef, useState } from "react";
+import posts from "./data/posts.json";
+import profile from "./data/profile.json";
+import skills from "./data/skill.json";
+import PostCard from "./components/feed/PostCard";
+import Profile from "./components/feed/Profile";
+import CallSidebar from "./components/feed/CallSidebar";
+import { LuX } from "react-icons/lu";
 
 export default function App() {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const openButton = useRef(null);
+    const closeButton = useRef(null);
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    useEffect(() => {
+        if (isSidebarOpen) {
+            closeButton.current?.focus();
+        }
+    }, [isSidebarOpen]);
 
-  return (
-    <main className=" bg-fondo ">
-      <div className='flex flex-col justify-start  gap-6  md:flex-row-reverse  mx-6 lg:mx-16 py-6  '>
+    function closeSidebar() {
+        setIsSidebarOpen(false);
+        openButton.current?.focus();
+    }
 
-        <section>
-          <CallSidebar
-            onOpen={() => setIsSidebarOpen(true)} />
-        </section>
-
-        <section>
-
-
-
-
-          <section>
-
-
-            <aside className={`
-                    fixed inset-y-0 right-0 z-50 w-[25rem]  bg-fondo p-4 shadow-2xl 
-                    transform transition-transform duration-300 ease-in-out
-                    ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full '}
-                    md:translate-x-0 md:static md:w-auto
-                `}>
-              {/* Botón de cerrar dentro del sidebar para móviles */}
-              <button
-                onClick={() => setIsSidebarOpen(false)}
-                className="md:hidden"
-              >
-                <ArrowSidebar />
-              </button>
-
-
-              {profile.map((item) => (
-                <Profile key={item.id} prof={item} />
-              ))}
-            </aside>
-
-            {skillData.map((item) => (
-              <CardSkill key={item.id} skillData={item} />
-            ))}
-
-          </section>
-        </section>
-
-
-
-        <section className='-translate-x-12 '>
-
-          {posts.map((item) => (
-            <PostCard key={item.id} post={item} />
-          ))}
-
-        </section>
-
-      </div>
-    </main>
-  )
+    return (
+        <main className="min-h-screen bg-fondo">
+            <CallSidebar onOpen={() => setIsSidebarOpen(true)} buttonRef={openButton} expanded={isSidebarOpen} prof={profile[0]} />
+            <div className="portfolio-layout">
+                <aside id="portfolio-profile" className={`portfolio-sidebar ${isSidebarOpen ? "is-open" : ""}`}
+                    onKeyDown={(event) => {
+                        if (event.key === "Escape" && isSidebarOpen) closeSidebar();
+                    }}>
+                    <button ref={closeButton} type="button" onClick={closeSidebar}
+                        className="mb-3 flex min-h-11 items-center gap-2 text-white desktop:hidden">
+                        <LuX aria-hidden="true" /> Cerrar perfil
+                    </button>
+                    {profile.map((item) => <Profile key={item.id} prof={item} skills={skills} />)}
+                </aside>
+                <section aria-label="Publicaciones" className="portfolio-feed min-w-0">
+                    {posts.map((item) => <PostCard key={item.id} post={item} />)}
+                </section>
+            </div>
+        </main>
+    );
 }

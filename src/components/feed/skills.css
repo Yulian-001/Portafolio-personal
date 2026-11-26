@@ -1,0 +1,217 @@
+.profile-flip {
+    perspective: 1600px;
+}
+
+.profile-follow,
+.profile-option-trigger {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ffffff80;
+    background: #211130;
+    color: #fff3ff;
+    font-size: .875rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profile-follow { padding-inline: 12px; border-radius: 999px; }
+.profile-options { position: relative; }
+.profile-option-trigger { width: 44px; border-radius: 50%; list-style: none; }
+.profile-option-trigger::-webkit-details-marker { display: none; }
+.profile-option-trigger svg { width: 21px; height: 21px; }
+.profile-follow:hover, .profile-option-trigger:hover { background: #402053; }
+.profile-options-panel {
+    position: absolute;
+    inset: calc(100% + 6px) 0 auto auto;
+    z-index: 1;
+    min-width: max-content;
+    padding: 4px;
+    border: 1px solid #9277a8;
+    border-radius: 10px;
+    background: #211130;
+}
+
+.profile-options-panel a { display: block; padding: 10px 12px; border-radius: 6px; }
+.profile-options-panel a:hover, .profile-options-panel a:focus-visible { background: #402053; }
+.profile-follow:focus-visible,
+.profile-option-trigger:focus-visible { outline: 2px solid #ffde7e; outline-offset: 5px; }
+
+.skill-legend button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    border: 1px solid #8276ac;
+    border-radius: 8px;
+    padding: 6px 12px;
+    background: #1b142a;
+    color: #faf3ff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.skill-legend button:focus-visible {
+    outline: 2px solid #86faf6;
+    outline-offset: 3px;
+}
+
+.profile-rotor {
+    display: grid;
+    transform-style: preserve-3d;
+    transition: transform 720ms cubic-bezier(.3,.08,.25,1);
+}
+
+.profile-rotor.is-flipped { transform: rotateY(-180deg); }
+
+.profile-face {
+    grid-area: 1 / 1;
+    min-width: 0;
+    min-height: 0;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+}
+
+.profile-face[inert] { contain: size; }
+.profile-face-back { transform: rotateY(180deg); }
+
+.skill-plate,
+.skill-plate-surface {
+    --plate-outline: polygon(0 20px,20px 0,calc(100% - 20px) 0,100% 20px,100% calc(100% - 20px),calc(100% - 20px) 100%,20px 100%,0 calc(100% - 20px));
+    clip-path: var(--plate-outline);
+}
+
+.skill-plate {
+    padding: clamp(6px, 1vw, 11px);
+    color: #f5f0ff;
+    background:
+        repeating-linear-gradient(132deg, #ffffff1b 0 1px, #08091322 1px 2px, transparent 2px 5px),
+        linear-gradient(142deg,#d8e4ef,#626c84 30%,#b6c4d3 48%,#504362 64%,#c0a7d3 78%,#727d95);
+}
+
+.skill-plate-surface {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid #b090ff;
+    background: radial-gradient(ellipse at 0 60%, #101a31, transparent 55%),
+                radial-gradient(ellipse at 100% 0, #24113c, transparent 45%), #07080e;
+}
+
+.skill-stars,
+.skill-circuits {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.skill-stars g { animation: skill-drift 10s ease-in-out infinite alternate; }
+.skill-stars path { fill: none; stroke: #b5c9ff; stroke-opacity: .19; stroke-width: .7; }
+.skill-stars circle { fill: #e3f3ff; filter: drop-shadow(0 0 4px #92defa); }
+.skill-stars .skill-constellations { animation: skill-drift 22s ease-in-out infinite alternate; }
+.skill-constellations path { stroke-opacity: .29; }
+.skill-plate:where(.profile-face[inert] *) .skill-stars g { animation-play-state: paused; }
+
+@keyframes skill-drift {
+    from { transform: translate(-8px, 14px); opacity: .26; }
+    to { transform: translate(17px, -20px); opacity: .85; }
+}
+
+.skill-circuits {
+    fill: none;
+    stroke: #7ba5ff;
+    stroke-width: 1;
+    filter: drop-shadow(0 0 3px #618cff);
+}
+
+.skill-circuits > * { vector-effect: non-scaling-stroke; }
+.skill-circuits path:nth-child(2),
+.skill-circuits circle:nth-of-type(3) { stroke: #d794ff; }
+
+.skill-content { container-type: inline-size; padding: clamp(22px, 5%, 38px) clamp(14px, 5%, 38px); }
+.skill-heading {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid #8b79bd80;
+    padding: 0 4px 13px;
+    background: linear-gradient(90deg, #101628dd, #12101cbb 70%, transparent);
+}
+.skill-heading > svg { flex: 0 0 30px; height: 30px; color: #6af3f3; filter: drop-shadow(0 0 6px #a16dff); }
+.skill-heading p { color: #a5e7fb; font-size: .85rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+.skill-heading h3 { margin-top: 4px; font-size: clamp(1.15rem, 4.3cqi, 1.8rem); font-weight: 850; line-height: 1.15; }
+
+.skill-radar { display: grid; min-width: 0; gap: 8px; padding: 10px 0 16px; }
+.skill-chart { width: calc(100% + 12px); aspect-ratio: 1; min-width: 0; max-width: 510px; justify-self: center; }
+.skill-chart .recharts-surface:focus { outline: none; }
+.skill-axis-label {
+    fill: #faf7ff;
+    stroke: #090912;
+    stroke-width: 4px;
+    paint-order: stroke;
+    font-size: clamp(.69rem, 3.1cqi, .92rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+.skill-chart .recharts-polar-grid { transition: filter 160ms; stroke-opacity: .5; }
+.skill-chart .recharts-polar-grid:hover { filter: drop-shadow(0 0 5px #86b7ff); }
+.skill-chart .recharts-polar-grid-concentric path:first-child { fill-opacity: .33; }
+.skill-chart .recharts-polar-grid :is(path, line) { pointer-events: stroke; }
+.skill-trace .recharts-polygon { pointer-events: stroke; transition: filter 150ms, stroke-width 150ms, fill-opacity 150ms; }
+.skill-trace:is(:hover, .is-selected) .recharts-polygon {
+    stroke-width: 3.5;
+    fill-opacity: .07;
+    filter: drop-shadow(0 0 3px currentColor) drop-shadow(0 0 8px currentColor);
+}
+
+.skill-radar-aside {
+    padding: 7px 9px;
+    border: 1px solid #786b9c;
+    border-radius: 8px;
+    background: #10101def;
+}
+.skill-radar-aside p { margin: 3px 5px 4px; color: #d7d5e8; font-size: .82rem; line-height: 1.45; }
+.skill-legend { display: flex; flex-wrap: wrap; gap: 0 5px; }
+.skill-legend button { width: 100%; padding: 4px 5px; border-color: transparent; background: transparent; font-size: .83rem; text-align: left; }
+.skill-legend button span { flex: 0 0 .65rem; height: .65rem; background: var(--trace); border-radius: 2px; box-shadow: 0 0 6px var(--trace); }
+.skill-legend button:hover,
+.skill-legend button[aria-pressed="true"] { border-color: var(--trace); box-shadow: inset 0 0 12px color-mix(in srgb, var(--trace) 25%, transparent); }
+
+.skill-sections { display: grid; gap: 10px; }
+.skill-group { padding: clamp(12px, 3%, 18px); border: 1px solid #8274a6; border-radius: 10px; background: linear-gradient(150deg, #19172bed, #100e1beb); }
+.skill-group h4 { color: #b9efff; font-size: .94rem; font-weight: 800; text-transform: uppercase; }
+.skill-group-wide { grid-column: 1 / -1; }
+.skill-group-static > ul { display: grid; gap: 10px; margin-top: 9px; }
+.skill-group-wide .skill-group-static > ul { grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); }
+.skill-group img { width: 44px; height: 44px; flex: 0 0 44px; object-fit: contain; }
+.skill-group h5 { color: #fff; font-size: .95rem; font-weight: 750; overflow-wrap: anywhere; }
+.skill-group p { color: #d7d5e8; font-size: .875rem; line-height: 1.42; overflow-wrap: anywhere; }
+
+@container (width >= 390px) {
+    .skill-sections { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (width < 48rem) {
+    .skill-sections { grid-template-columns: minmax(0, 1fr); }
+}
+
+@container (width < 490px) {
+    .skill-group-wide .skill-group-static > ul { grid-template-columns: minmax(0, 1fr); }
+}
+
+@container (width >= 490px) {
+    .skill-radar { grid-template-columns: minmax(0, 1fr) minmax(136px, 24%); gap: 10px; }
+    .skill-chart { width: 100%; }
+    .skill-radar-aside { align-self: end; margin-bottom: 8%; }
+    .skill-legend { display: grid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-rotor,
+    .skill-trace .recharts-polygon { transition: none; }
+    .skill-stars g, .skill-stars .skill-constellations { animation: none; }
+}
