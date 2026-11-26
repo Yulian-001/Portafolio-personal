@@ -78,9 +78,9 @@
             "githubUrl":"https://github.com/Yulian-001/gym-management-system.git"
         },
             {"id": "p-2", 
-            "name": "Hitos de Autos Deportivos",
-            "description": "Una experiencia interactiva que recorre la evolución de la ingeniería y el diseño automotriz, desde los modelos clásicos hasta la innovación contemporánea. Explora el repositorio para ver cómo se estructuró la interfaz y la gestión de datos.",
-            "githubUrl":"https://github.com/Yulian-001/Hitos-de-autos-deportivos-e-hiperdeportivos.git"
+            "name": "Agenda Web para reserva de citas",
+            "description": "Solución web full-stack orientada a digitalizar y optimizar la gestión operativa y administrativa en el sector de barberías. Diseñada bajo reglas de negocio robustas, la aplicación integra en una sola arquitectura la sincronización de agendas y calendarios, la administración de personal y servicios, y un módulo contable para la trazabilidad financiera, garantizando integridad de datos y una experiencia fluida tanto para la administración como para la operación diaria. Link: https://agenda-web-reserva.vercel.app/",
+            "githubUrl":"https://github.com/Yulian-001/Agenda-Web"
         },
             {"id": "p-3", 
             "name": "Calculadora de CDT",
