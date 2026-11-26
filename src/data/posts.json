@@ -79,8 +79,9 @@
         },
             {"id": "p-2", 
             "name": "Agenda Web para reserva de citas",
-            "description": "Solución web full-stack orientada a digitalizar y optimizar la gestión operativa y administrativa en el sector de barberías. Diseñada bajo reglas de negocio robustas, la aplicación integra en una sola arquitectura la sincronización de agendas y calendarios, la administración de personal y servicios, y un módulo contable para la trazabilidad financiera, garantizando integridad de datos y una experiencia fluida tanto para la administración como para la operación diaria. Link: https://agenda-web-reserva.vercel.app/",
-            "githubUrl":"https://github.com/Yulian-001/Agenda-Web"
+            "description": "Solución web full-stack orientada a digitalizar y optimizar la gestión operativa y administrativa en el sector de barberías. Diseñada bajo reglas de negocio robustas, la aplicación integra en una sola arquitectura la sincronización de agendas y calendarios, la administración de personal y servicios, y un módulo contable para la trazabilidad financiera, garantizando integridad de datos y una experiencia fluida tanto para la administración como para la operación diaria.",
+            "githubUrl":"https://github.com/Yulian-001/Agenda-Web",
+            "link": "https://agenda-web-reserva.vercel.app/"
         },
             {"id": "p-3", 
             "name": "Calculadora de CDT",

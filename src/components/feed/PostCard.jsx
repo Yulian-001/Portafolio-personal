@@ -3,6 +3,7 @@ import MobileLoopRow from "./MobileLoopRow";
 import PostIcons from "./PostIcons";
 
 const hoverColors = ["stroke-yellow-400", "stroke-cyan-400", "stroke-sky-400", "stroke-purple-400", "stroke-orange-400", "stroke-blue-400"];
+const projectButton = "inline-flex rounded-lg bg-blue-100 px-3 py-1.5 font-semibold text-blue-950 hover:bg-blue-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-200";
 
 function Logo({ item, index = 0 }) {
     const gradientId = useId();
@@ -64,13 +65,14 @@ export default function PostCard({ post }) {
                 )}
                 {!!post.projects?.length && (
                     <ul className="space-y-3 pt-2">
-                        {post.projects.map(({ id, name, description, githubUrl }) => (
+                        {post.projects.map(({ id, name, description, githubUrl, link }) => (
                             <li key={id} className="p-3">
                                 <h4 className="pb-3 text-xl font-medium">{name}</h4>
                                 <p className="mb-3 text-lg">{description}</p>
-                                <a href={githubUrl} target="_blank" rel="noreferrer" className="inline-flex rounded-lg bg-blue-100 px-3 py-1.5 font-semibold text-blue-950 hover:bg-blue-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-200">
-                                    Ver GitHub
-                                </a>
+                                <div className="flex flex-wrap gap-2">
+                                    {githubUrl?.trim() && <a href={githubUrl.trim()} target="_blank" rel="noreferrer" className={projectButton}>Ver GitHub</a>}
+                                    {link?.trim() && <a href={link.trim()} target="_blank" rel="noreferrer" className={projectButton}>Ver proyecto</a>}
+                                </div>
                             </li>
                         ))}
                     </ul>
